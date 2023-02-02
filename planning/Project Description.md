@@ -4,6 +4,8 @@
 
 ## Project description - What problem your app solves
 
+There are many credit cards out there these days and it can get overwhelming. Our app allows clients to maximize their cashback from their purchases. We plan to showcase the best credit cards and their rewards in a clear and concise manner.
+
 ## Target audience - Your app will be useful to whom?
 
 ## Team members
