@@ -20,7 +20,8 @@
 .card {
   height: 310px;
   width: 500px;
-  background-image:linear-gradient(rgb(22, 24, 48),rgb(69, 61, 51));
+  /* change card color */
+  background-image:linear-gradient(rgb(22, 24, 48),rgb(69, 61, 51)); 
   border-radius: 20px;
   color:white;
   margin:20px;
@@ -114,6 +115,7 @@ nav {
   color: #FFFFFF;
   position: fixed;
   top:0px;
+  left: 0px;
   z-index: 1;
 }
 
