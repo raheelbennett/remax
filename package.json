@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "reset": "psql -U labber -d remax < ./config/schema/create.sql && psql -U labber -d remax < ./config/schema/seed.sql"
+    "reset": "node config/db.js"
   },
   "dependencies": {
     "@next/font": "13.1.6",
