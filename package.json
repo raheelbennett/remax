@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "reset": "psql -U labber -d remax < ./config/schema/create.sql && psql -U labber -d remax < ./config/schema/seed.sql"
   },
   "dependencies": {
     "@next/font": "13.1.6",

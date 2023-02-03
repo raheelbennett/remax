@@ -1,5 +1,8 @@
 # Entity Relationship Diagram
 
+(./ERD.png)
+https://app.diagrams.net/#G1psklMOCR0An0uta6onSs3tPGdPN-RwX7
+
 ## Compass Requirement
 
 d) Entity Relationship Diagram

@@ -1,8 +1,8 @@
 # Stack Choices
 
-- Front-End
-- Back-End
-- Database
+- Front-End: React
+- Back-End: Next.js
+- Database: PostgreSQL
 
 ## Compass Requirement
 
