@@ -11,8 +11,7 @@ VALUES
 ('Gas'),
 ('Transit'),
 ('Other'),
-('USD'),
-('Own store');
+('USD');
 
 
 INSERT INTO banks (name)
@@ -67,7 +66,18 @@ VALUES
 (2,4,9),
 (2,4,10),
 (2,4,11),
-(2.5,5,13),
 (2.5,5,12),
 (1,5,11);
 
+INSERT INTO vendors (name,category_id)
+VALUES
+('Amazon',11);
+
+INSERT INTO card_user(card_id,user_id)
+VALUES
+(1,1),
+(4,1);
+
+INSERT INTO listings(reward_rate, vendor , card_id)
+VALUES
+(2.5,1,5);
