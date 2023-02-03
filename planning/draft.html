@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="draft.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <nav>
+    <span class="app-title"> Remax </span>
+    <div>
+      <button class="sign-up">Sign Up</button>
+      <button class="log-in">Log In</button>
+    </div>
+  </nav>
+  
+  <div class='store-list'>
+    Filter By:
+    <select >
+      <option value="vendor">Vendor</option>
+      <option value="bank">Bank</option>
+      <option value="category">Category</option>
+    </select>
+    <br>
+    <ul>
+      <li class="column-category">
+        Amazon
+      </li>
+      <br>
+      <li class="column-category">
+        PC Optimum
+      </li>
+      <br>
+      <li class="column-category">
+        Walmart
+      </li>
+      <br>
+      <li class="column-category">
+        Costco
+      </li>
+      <br>
+      <li class="column-category">
+        Home Depot
+      </li>
+    </ul>
+    
+    
+  </div>
+ 
+  <div class='header'>
+  <!-- inspired from https://hashnode.com/post/making-credit-card-using-html-and-css-ckj5g06m207n6ozs12wrn7mvv -->
+  
+  <form action="" class='search'>
+    <input type="text" placeholder="search ">
+    <button type="submit">Submit</button>
+  </form>
+  <article class="category">
+    <h2>Card Category</h2>
+
+  </article>
+</div>
+<!-- Visa Card -->
+<article class='card-body'>
+    <div class='card'>
+      <div class='top-block'>
+        <div class='card-type'>
+          <!-- icon -->
+        <i class="fa-brands fa-xl fa-cc-visa"></i> 
+      </div>
+      <span class='card-name'>
+        Visa
+      </span>
+    </div>
+    <div class='bottom-block'>
+<div class='rewards'>
+  Cashback percentage:
+  <br>Grocery: 2.5% cashback
+  <br>Recurring Bills: 2% cashback
+  <br>Other: 0.5% cashback
+</div>
+    </div>
+</div>
+</article>
+<div class='card-info'>
+  <h3>Name</h3>
+  <p>Visa Card</p>
+  <h3>Annual Fee</h3>
+  <p>$0</p>
+  <h3>Interest Rates</h3>
+  <p>19.99% / 21.99%</p>
+</div>
+
+<!-- Mastercard -->
+<article class='card-body'>
+  <div class='card'>
+    <div class='top-block'>
+      <div class='card-type'>
+        <i class="fa-brands fa-xl fa-cc-mastercard"></i>
+      </div>
+      <span class='card-name'>
+        Mastercard
+      </span>
+    </div>
+    <div class='bottom-block'>
+      <div class='rewards'>
+        Cashback percentage:
+        <br>Grocery: 1.5% cashback
+        <br>Recurring Bills: 2.5% cashback
+        <br>Other: 1% cashback
+      </div>
+    </div>
+  </div>
+</article>
+<div class='card-info'>
+  <h3>Name</h3>
+  <p>BMO mastercard </p>
+  <h3>Annual Fee</h3>
+  <p>$0</p>
+  <h3>Interest Rates</h3>
+  <p>19.99% / 21.99%</p>
+</div>
+
+
+<!-- Amazon Card -->
+<article class='card-body'>
+  <div class='card'>
+    <div class='top-block'>
+      <div class='card-type'>
+        <i class="fa-brands fa-xl fa-cc-amazon-pay"></i>
+      </div>
+      <span class='card-name'>
+        Amazon
+      </span>
+    </div>
+    <div class='bottom-block'>
+      <div class='rewards'>
+        Cashback percentage:
+        <br>Grocery: 1% cashback
+        <br>Restaurants: 1.5% cashback
+        <br>Recurring Bills: 1% cashback
+        <br>Other: 0.5% cashback
+      </div>
+    </div>
+</div>
+</article>
+<div class='card-info'>
+  <h3>Name</h3>
+  <p>Amazon MBNA Card</p>
+  <h3>Annual Fee</h3>
+  <p>$0</p>
+  <h3>Interest Rates</h3>
+  <p>19.99% / 21.99%</p>
+</div>
+
+<!-- end of cards -->
+
+</body>
+</html>
