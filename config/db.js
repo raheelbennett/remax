@@ -2,13 +2,13 @@ require("dotenv").config();
 const { Client } = require("pg");
 const fs = require("fs");
 
-// const db = new Client({
-//   host: process.env.DB_HOST,
-//   port: process.env.DB_PORT,
-//   user: process.env.DB_USER,
-//   password: process.env.DB_PASS,
-//   name: process.env.DB_NAME,
-// });
+const db = new Client({
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  name: process.env.DB_NAME,
+});
 
 db.connect()
   .then(() => console.log("connected to DB"))
