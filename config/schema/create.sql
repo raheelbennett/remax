@@ -17,6 +17,7 @@ CREATE TABLE cards (
   name VARCHAR(255) NOT NULL,
   interest_rate FLOAT,
   annual_fee FLOAT,
+  img_url text,
   bank_id INTEGER REFERENCES banks(id) ON DELETE CASCADE
 );
 
