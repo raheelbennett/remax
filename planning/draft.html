@@ -10,11 +10,13 @@
 </head>
 <body>
   <nav>
+    <!-- <i class="menu">=</i> possibly use this and then the filter-by/store-list drops down ?-->
     <span class="app-title"> Remax </span>
     <div>
       <button class="sign-up">Sign Up</button>
       <button class="log-in">Log In</button>
     </div>
+
   </nav>
   
   <div class='store-list'>
@@ -22,7 +24,6 @@
     <select >
       <option value="vendor">Vendor</option>
       <option value="bank">Bank</option>
-      <option value="category">Category</option>
     </select>
     <br>
     <ul>
@@ -57,10 +58,19 @@
     <input type="text" placeholder="search ">
     <button type="submit">Submit</button>
   </form>
-  <article class="category">
-    <h2>Card Category</h2>
 
+  <article class="category">
+    <!-- <h2>Card Category</h2> -->
+    <ul class="column-category">
+      <li>Gas</li>
+      <li>Streaming services</li>
+      <li>Restaurants</li>
+      <li>Drug Stores</li>
+      <li>Home Improvement</li>
+      <li>Other</li>
+    </ul>
   </article>
+
 </div>
 <!-- Visa Card -->
 <article class='card-body'>
