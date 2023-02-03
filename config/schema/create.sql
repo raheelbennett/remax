@@ -58,3 +58,6 @@ CREATE TABLE listings (
   vendor INTEGER REFERENCES vendors(id) ON DELETE CASCADE,
   card_id INTEGER REFERENCES cards(id) ON DELETE CASCADE
 );
+
+insert into banks (name)
+VALUES ('test');
