@@ -17,7 +17,8 @@ CREATE TABLE cards (
   name VARCHAR(255) NOT NULL,
   interest_rate FLOAT,
   annual_fee FLOAT,
-  img_url text,
+  img_url TEXT,
+  featured BOOLEAN DEFAULT FALSE,
   bank_id INTEGER REFERENCES banks(id) ON DELETE CASCADE
 );
 
@@ -36,7 +37,8 @@ CREATE TABLE card_user (
 
 CREATE TABLE categories (
   id SERIAL PRIMARY KEY NOT NULL,
-  name VARCHAR(255) NOT NULL
+  name VARCHAR(255) NOT NULL,
+  featured BOOLEAN DEFAULT FALSE
 );
 
 CREATE TABLE rewards (
@@ -49,6 +51,7 @@ CREATE TABLE rewards (
 CREATE TABLE vendors (
   id SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(255) NOT NULL,
+  featured BOOLEAN DEFAULT FALSE,
   category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE
 );
 

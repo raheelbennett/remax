@@ -1,17 +1,17 @@
-INSERT INTO categories (name)
+INSERT INTO categories (name, featured)
 VALUES
-('Grocery'),
-('Recurring Bill'),
-('Furniture'),
-('Drug Store'),
-('Restaurants'),
-('Home Improvement'),
-('Hotel'),
-('Entertainment'),
-('Gas'),
-('Transit'),
-('Other'),
-('USD');
+('Grocery', true),
+('Recurring Bill', true),
+('Furniture', false),
+('Drug Store', false),
+('Restaurants', true),
+('Home Improvement', false),
+('Hotel', false),
+('Entertainment', false),
+('Gas', true),
+('Transit', true),
+('Other', false),
+('USD', false);
 
 
 INSERT INTO banks (name)
@@ -35,13 +35,13 @@ INSERT INTO users (name, email, password)
 VALUES
 ('John Doe', 'test@remax.com', 'password');
 
-INSERT INTO cards (name, interest_rate, annual_fee, bank_id, img_url)
+INSERT INTO cards (name, interest_rate, annual_fee, bank_id, featured, img_url)
 VALUES
-('BMO CashBack World Elite Mastercard',20.99, 120, 9, 'https://www.bmo.com/dist/images/personal/credit-cards/bmo-cashback-world-elite-mastercard.webp'),
-('Rogers World Elite Mastercard',19.99,0.00,7,'https://www.greedyrates.ca/wp-content/uploads/2018/05/Rogers-World-Elite-Mastercard-243.png' ),
-('AMEX SimplyCash Preferred Card', 20.99, 119.88, 2, 'https://icm.aexp-static.com/Internet/internationalcardshop/en_ca/images/cards/SimplyCash_Preferred_Card.png'),
-('Tangerine World Mastercard',19.95,0.00,3 ,'https://princeoftravel.com/wp-content/uploads/2021/03/CONFIDENTIAL_2019-Tangerine_World-MC_ENG_Front_Vertical_Small_RGB.png'),
-('Amazon.ca Rewards Mastercard',19.99, 0.00,8 ,'https://m.media-amazon.com/images/G/15/ca_cbcc/EnglishLandingPages/amz_ca-cbcc_english_2x._CB623304959_.png');
+('BMO CashBack World Elite Mastercard',20.99, 120, 9, true, 'https://www.bmo.com/dist/images/personal/credit-cards/bmo-cashback-world-elite-mastercard.webp'),
+('Rogers World Elite Mastercard',19.99,0.00,7, true, 'https://www.greedyrates.ca/wp-content/uploads/2018/05/Rogers-World-Elite-Mastercard-243.png' ),
+('AMEX SimplyCash Preferred Card', 20.99, 119.88, 2, true, 'https://icm.aexp-static.com/Internet/internationalcardshop/en_ca/images/cards/SimplyCash_Preferred_Card.png'),
+('Tangerine World Mastercard',19.95,0.00,3, true, 'https://princeoftravel.com/wp-content/uploads/2021/03/CONFIDENTIAL_2019-Tangerine_World-MC_ENG_Front_Vertical_Small_RGB.png'),
+('Amazon.ca Rewards Mastercard',19.99, 0.00,8, true, 'https://m.media-amazon.com/images/G/15/ca_cbcc/EnglishLandingPages/amz_ca-cbcc_english_2x._CB623304959_.png');
 
 INSERT INTO rewards (reward_rate, card_id,category_id)
 VALUES
@@ -69,76 +69,32 @@ VALUES
 (2.5,5,12),
 (1,5,11);
 
-INSERT INTO vendors (name,category_id)
+INSERT INTO vendors (name,category_id, featured)
 VALUES
-('Amazon',11);
-INSERT INTO vendors (name, category_id)
-VALUES
-('No Frills','1');
-INSERT INTO vendors (name, category_id)
-VALUES
-('Whole Foods','1');
-INSERT INTO vendors (name, category_id)
-VALUES
-('Metro','1');
+('Amazon',11, true),
+('No Frills', 1, false),
+('Whole Foods', 1, true),
+('Metro', 1, true),
+('IGA', 1, true),
+('Food Basics', 1, false),
+('The Keg', 5, true),
+('Moxies', 5, true),
+('Boston Pizza', 5, true),
+('Netflix', 8, true),
+('Disney Plus', 8, true),
+('Crave TV', 8, false),
+('YouTube Premium', 8, false),
+('Spotify', 8, true),
+('Apple Music', 8, false),
+('Petro-Canada', 9, true),
+('Shell', 9, false),
+('Esso', 9, false),
+('Pioneer', 9, false),
+('Husky', 9, false),
+('Ultramar', 9, false),
+('Mobil', 9, false),
+('Ebay', 11, false);
 
-INSERT INTO vendors (name, category_id)
-VALUES
-('IGA','1');
-
-INSERT INTO vendors (name, category_id)
-VALUES
-('Food Basics','1');
-INSERT INTO vendors (name, category_id)
-VALUES
-('The Keg','5');
-INSERT INTO vendors (name, category_id)
-VALUES
-('Moxies','5');
-INSERT INTO vendors (name, category_id)
-VALUES
-('Boston Pizza','5');
-
-INSERT INTO vendors (name, category_id)
-VALUES
-('Netflix','8');
-INSERT INTO vendors (name, category_id)
-VALUES
-('Disney Plus','8');
-INSERT INTO vendors (name, category_id)
-VALUES
-('Crave TV','8');
-INSERT INTO vendors (name, category_id)
-VALUES
-('YouTube Premium','8');
-INSERT INTO vendors (name, category_id)
-VALUES
-('Spotify','8');
-INSERT INTO vendors (name, category_id)
-VALUES
-('Apple Music','8');
-
-INSERT INTO vendors (name, category_id)
-VALUES
-('Petro-Canada','9');
-INSERT INTO vendors (name, category_id)
-VALUES
-('Shell','9');
-INSERT INTO vendors (name, category_id)
-VALUES
-('Esso','9');
-INSERT INTO vendors (name, category_id)
-VALUES
-('Pioneer','9');
-INSERT INTO vendors (name, category_id)
-VALUES
-('Husky','9');
-INSERT INTO vendors (name, category_id)
-VALUES
-('Ultramar','9');
-INSERT INTO vendors (name, category_id)
-VALUES
-('Mobil','9');
 INSERT INTO card_user(card_id,user_id)
 VALUES
 (1,1),

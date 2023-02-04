@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "reset": "node config/db.js"
+    "reset": "node config/db_reset.js"
   },
   "dependencies": {
     "@next/font": "13.1.6",
