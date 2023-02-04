@@ -1,21 +1,20 @@
-import React from 'react'
-import Cards from 'react-credit-cards';
+import Image from 'next/image'
+import Link from 'next/link'
+const CardItem = ({card}) => {
 
-const CardItem = (card) => {
-
+  console.log({card})
 
   return (
-    <div>       
-      
- <Cards
-    cvc="123"
-    expiry="12/25"
-    focused="number"
-    name="light house labs"
-    number="1234567890123456"
-  />
-  
-  
+    <div>
+<Link href="/cards/[id]" as={`/cards/${card.id}`}>
+      <Image     
+      src={`/assets/img/card/${card.img_url}`}
+ 
+      width={200}
+      height={200}
+      />
+      {card.name}
+      </Link>
   </div>
   )
 }

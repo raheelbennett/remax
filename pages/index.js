@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import CardItem from '../components/cards/CardItem'
 import VendorItem from '../components/vendors/VendorItem'
+import CardsList from '../components/cards/CardsList'
 
 
 const vendors = [
@@ -93,16 +94,9 @@ const home = () => {
           </div>
 
           <h2>Cards</h2>
+          <CardsList />
           <div className="card-list grid grid-cols-3 gap-4">
-          <CardItem />
-          <CardItem />
-          <CardItem />
-          <CardItem />
-          <CardItem />
-          <CardItem />
-          <CardItem />
-          <CardItem />
-          <CardItem />
+
           </div>
 
         </section>
