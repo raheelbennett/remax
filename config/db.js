@@ -7,7 +7,7 @@ const db = new Client({
   port: process.env.DB_PORT,
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
-  name: process.env.DB_NAME,
+  database: process.env.DB_NAME,
 });
 
 db.connect()
@@ -18,14 +18,8 @@ const create = fs.readFileSync("config/schema/create.sql", { encoding: "utf8" })
 const seed = fs.readFileSync("config/schema/seed.sql", { encoding: "utf8" });
 
 db.query(create)
-  .then(() => console.log("Tables Reloaded"))
   .then(() => db.query(seed))
-  .then(() => console.log("DB Seeded"))
-  .then(() => {
-    const testing = db.query("SELECT * from banks");
-    return testing;
-  })
-  .then((testing) => console.log("testing", testing.rows))
+  .then(() => console.log("DB Reloaded"))
   .catch((e) => {
     console.log(e.message);
   });

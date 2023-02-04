@@ -71,7 +71,8 @@ VALUES
 
 INSERT INTO vendors (name,category_id)
 VALUES
-('Amazon',11);
+('Amazon',11),
+('ebay', 11);
 
 INSERT INTO card_user(card_id,user_id)
 VALUES
