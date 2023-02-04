@@ -37,11 +37,11 @@ VALUES
 
 INSERT INTO cards (name, interest_rate, annual_fee, bank_id, featured, img_url)
 VALUES
-('BMO CashBack World Elite Mastercard',20.99, 120, 9, true, 'https://www.bmo.com/dist/images/personal/credit-cards/bmo-cashback-world-elite-mastercard.webp'),
-('Rogers World Elite Mastercard',19.99,0.00,7, true, 'https://www.greedyrates.ca/wp-content/uploads/2018/05/Rogers-World-Elite-Mastercard-243.png' ),
-('AMEX SimplyCash Preferred Card', 20.99, 119.88, 2, true, 'https://icm.aexp-static.com/Internet/internationalcardshop/en_ca/images/cards/SimplyCash_Preferred_Card.png'),
-('Tangerine World Mastercard',19.95,0.00,3, true, 'https://princeoftravel.com/wp-content/uploads/2021/03/CONFIDENTIAL_2019-Tangerine_World-MC_ENG_Front_Vertical_Small_RGB.png'),
-('Amazon.ca Rewards Mastercard',19.99, 0.00,8, true, 'https://m.media-amazon.com/images/G/15/ca_cbcc/EnglishLandingPages/amz_ca-cbcc_english_2x._CB623304959_.png');
+('BMO CashBack World Elite Mastercard',20.99, 120, 9, true, 'bmo-cash-back-world-elite.webp'),
+('Rogers World Elite Mastercard',19.99,0.00,7, true, 'rogers-world-elite.png' ),
+('AMEX SimplyCash Preferred Card', 20.99, 119.88, 2, true, 'amex-simplycash-preferred.png'),
+('Tangerine World Mastercard',19.95,0.00,3, true, 'tangerine-world.png'),
+('Amazon.ca Rewards Mastercard',19.99, 0.00,8, true, 'amazon-rewards.png');
 
 INSERT INTO rewards (reward_rate, card_id,category_id)
 VALUES
