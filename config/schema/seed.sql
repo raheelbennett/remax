@@ -71,9 +71,74 @@ VALUES
 
 INSERT INTO vendors (name,category_id)
 VALUES
-('Amazon',11),
-('ebay', 11);
+('Amazon',11);
+INSERT INTO vendors (name, category_id)
+VALUES
+('No Frills','1');
+INSERT INTO vendors (name, category_id)
+VALUES
+('Whole Foods','1');
+INSERT INTO vendors (name, category_id)
+VALUES
+('Metro','1');
 
+INSERT INTO vendors (name, category_id)
+VALUES
+('IGA','1');
+
+INSERT INTO vendors (name, category_id)
+VALUES
+('Food Basics','1');
+INSERT INTO vendors (name, category_id)
+VALUES
+('The Keg','5');
+INSERT INTO vendors (name, category_id)
+VALUES
+('Moxies','5');
+INSERT INTO vendors (name, category_id)
+VALUES
+('Boston Pizza','5');
+
+INSERT INTO vendors (name, category_id)
+VALUES
+('Netflix','8');
+INSERT INTO vendors (name, category_id)
+VALUES
+('Disney Plus','8');
+INSERT INTO vendors (name, category_id)
+VALUES
+('Crave TV','8');
+INSERT INTO vendors (name, category_id)
+VALUES
+('YouTube Premium','8');
+INSERT INTO vendors (name, category_id)
+VALUES
+('Spotify','8');
+INSERT INTO vendors (name, category_id)
+VALUES
+('Apple Music','8');
+
+INSERT INTO vendors (name, category_id)
+VALUES
+('Petro-Canada','9');
+INSERT INTO vendors (name, category_id)
+VALUES
+('Shell','9');
+INSERT INTO vendors (name, category_id)
+VALUES
+('Esso','9');
+INSERT INTO vendors (name, category_id)
+VALUES
+('Pioneer','9');
+INSERT INTO vendors (name, category_id)
+VALUES
+('Husky','9');
+INSERT INTO vendors (name, category_id)
+VALUES
+('Ultramar','9');
+INSERT INTO vendors (name, category_id)
+VALUES
+('Mobil','9');
 INSERT INTO card_user(card_id,user_id)
 VALUES
 (1,1),
