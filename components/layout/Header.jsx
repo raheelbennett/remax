@@ -1,16 +1,21 @@
 import Link from 'next/link'
-
+import Image from 'next/image'
 const Header = () => {
   return (
     <div>
-            <header className="flex justify-between">
-        <h1><Link href="/">remax</Link></h1>
+            <header className="flex justify-between bg-white text-black items-center p-2">
+        <h1><Link href="/">
+          <Image
+            src="/assets/img/logo.png"
+            width={200}
+            height={200}
+          /></Link></h1>
         <nav>
           <ul className="flex justify-between">
-            <li>Login</li>
-            <li>About</li>
-            <li>Register</li>
-            <li>Home</li>
+            <li className="px-2">Login</li>
+            <li className="px-2">About</li>
+            <li className="px-2">Register</li>
+            <li className="px-2">Home</li>
           </ul>
         </nav>
       </header>

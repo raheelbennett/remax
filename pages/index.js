@@ -3,7 +3,7 @@ import CardItem from '../components/cards/CardItem'
 import VendorItem from '../components/vendors/VendorItem'
 
 
-const vendrs = [
+const vendors = [
   {
     id: 1,
     name: "Home Depot",
@@ -46,27 +46,27 @@ const vendrs = [
     id: 7,
     name: "The Keg",
     image: "assets/img/vendor/the-keg.jpeg",
-    link: "/vendor/rogers"
+    link: "/vendor/the-keg"
   },
 
   {
     id: 8,
     name: "McDonalds",
-    image: "assets/img/vendor/mcondalds.jpeg",
-    link: "/vendor/"
+    image: "assets/img/vendor/mcondalds.png",
+    link: "/vendor/mcdonalds"
   },
 
   {
     id: 9,
     name: "Moxies",
     image: "assets/img/vendor/moxies.jpeg",
-    link: "/vendor/rogers"
+    link: "/vendor/moxies"
   },
   {
     id: 10,
     name: "Disney Plus",
     image: "assets/img/vendor/disney-plus.jpeg",
-    link: "/vendor/rogers"
+    link: "/vendor/disney-plus"
   }
 ]
 
@@ -83,7 +83,7 @@ const home = () => {
           <div className="store-list grid grid-cols-4 gap-4">
 
 {
-  vendrs.map((vendor) => (
+  vendors.map((vendor) => (
     <Link href={vendor.link}>
     <VendorItem vendor={vendor} />
     </Link>
