@@ -5,7 +5,7 @@ const VendorItem = ({vendor}) => {
   return (
     <div className="p-2">
        <Image
-      src={`/${vendor.image}`}
+      src={`/assets/img/vendor/${vendor.img_url}`}
       width={200}
       height={200}
     />

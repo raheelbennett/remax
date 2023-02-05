@@ -52,7 +52,9 @@ CREATE TABLE vendors (
   id SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(255) NOT NULL,
   featured BOOLEAN DEFAULT FALSE,
-  category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE
+  category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE, 
+  img_url TEXT, 
+  relative_link TEXT
 );
 
 CREATE TABLE listings (

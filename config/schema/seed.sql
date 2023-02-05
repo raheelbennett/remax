@@ -69,31 +69,37 @@ VALUES
 (2.5,5,12),
 (1,5,11);
 
-INSERT INTO vendors (name,category_id, featured)
+INSERT INTO vendors (name,category_id, featured, img_url, relative_link)
 VALUES
-('Amazon',11, true),
-('No Frills', 1, false),
-('Whole Foods', 1, true),
-('Metro', 1, true),
-('IGA', 1, true),
-('Food Basics', 1, false),
-('The Keg', 5, true),
-('Moxies', 5, true),
-('Boston Pizza', 5, true),
-('Netflix', 8, true),
-('Disney Plus', 8, true),
-('Crave TV', 8, false),
-('YouTube Premium', 8, false),
-('Spotify', 8, true),
-('Apple Music', 8, false),
-('Petro-Canada', 9, true),
-('Shell', 9, false),
-('Esso', 9, false),
-('Pioneer', 9, false),
-('Husky', 9, false),
-('Ultramar', 9, false),
-('Mobil', 9, false),
-('Ebay', 11, false);
+('Home Depot', 6, false,'home-depot.png','/vendor/home-depot'),
+('Amazon',11, true, 'amazon.png', '/vendor/amazon' ),
+('Telus', 2, true,'telus.png','/vendor/telus'),
+('Rogers',2, false, 'rogers.png', '/vendor/rogers'),
+('McDonalds', 5, false, 'mcdonalds.png', '/vendor/mcdonalds'),
+('The Keg', 5, true, 'the-keg.jpeg', '/vendor/the-keg'),
+('Moxies', 5, true, 'moxies.jpeg', '/vendor/moxies'),
+('Boston Pizza', 5, true, 'boston-pizza.png', '/vendor/boston-pizza'),
+('Netflix', 8, true, 'netflix.png', '/vendor/netflix'),
+('Disney Plus', 8, true, 'disney-plus.jpeg', '/vendor/disney-plus');
+-- ('No Frills', 1, false),
+
+-- ('Whole Foods', 1, true),
+-- ('Metro', 1, true),
+-- ('IGA', 1, true),
+-- ('Food Basics', 1, false),
+
+-- ('Crave TV', 8, false),
+-- ('YouTube Premium', 8, false),
+-- ('Spotify', 8, true),
+-- ('Apple Music', 8, false),
+-- ('Petro-Canada', 9, true),
+-- ('Shell', 9, false),
+-- ('Esso', 9, false),
+-- ('Pioneer', 9, false),
+-- ('Husky', 9, false),
+-- ('Ultramar', 9, false),
+-- ('Mobil', 9, false),
+-- ('Ebay', 11, false); will add img_url and relative link later
 
 INSERT INTO card_user(card_id,user_id)
 VALUES
