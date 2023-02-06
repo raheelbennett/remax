@@ -18,6 +18,19 @@ const getFeaturedCategories = () => {
     .then((data) => data.rows)
     .catch((err) => err.message);
 };
+const getFeaturedVendors = () => {
+  return db
+    .query("SELECT * FROM vendors WHERE featured = true;")
+    .then((data) => data.rows)
+    .catch((err) => err.message);
+};
+const getFeaturedCards = () => {
+  return db
+    .query("SELECT * FROM cards WHERE featured = true;")
+    .then((data) => data.rows)
+    .catch((err) => err.message);
+};
+
 const getCategoriesByCardID = (id) => {
   return db
     .query(
@@ -42,4 +55,6 @@ module.exports = {
   getAllCashback,
   getCategories,
   getFeaturedCategories,
+  getFeaturedVendors,
+  getFeaturedCards,
 };

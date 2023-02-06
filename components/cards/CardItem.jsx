@@ -1,22 +1,12 @@
-import Image from 'next/image'
-import Link from 'next/link'
-const CardItem = ({card}) => {
+import Image from "next/image";
+import React from "react";
 
-  console.log({card})
-
+const CardItem = ({ card }) => {
   return (
-    <div>
-<Link href="/cards/[id]" as={`/cards/${card.id}`}>
-      <Image     
-      src={`/assets/img/card/${card.img_url}`}
- 
-      width={200}
-      height={200}
-      />
-      {card.name}
-      </Link>
-  </div>
-  )
-}
+    <div className="p-2">
+      <Image alt={card.name} src={`/assets/img/card/${card.img_url}`} width={300} height={300} />
+    </div>
+  );
+};
 
-export default CardItem
+export default CardItem;
