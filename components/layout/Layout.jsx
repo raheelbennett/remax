@@ -7,8 +7,10 @@ const Layout = ({ children }) => {
     <div>
       <Header />
       <SearchBar />
-      <SubNav />
-      {children}
+      <div className="flex">
+        <SubNav />
+        {children}
+      </div>
     </div>
   );
 };

@@ -14,7 +14,7 @@ const getCategories = () => {
 };
 const getFeaturedCategories = () => {
   return db
-    .query("SELECT * FROM categories WHERE featured = true;")
+    .query("SELECT * FROM categories")
     .then((data) => data.rows)
     .catch((err) => err.message);
 };

@@ -76,7 +76,7 @@ export default function home({ featured_cards, featured_vendors }) {
     <main>
       <section className="main-content">
         <h2>Cards</h2>
-        <div className="card-list grid grid-cols-4 gap-40">
+        <div className="card-list grid grid-cols-4 gap-40 m-20">
           {featured_cards.map((card) => (
             <Link href="/cards/[id]" as={`/cards/${card.id}`} key={card.id}>
               <CardItem card={card} />
@@ -84,9 +84,8 @@ export default function home({ featured_cards, featured_vendors }) {
           ))}
         </div>
 
-        <h2>Vendors</h2>
-
-        <div className="vendor-list grid grid-cols-4 gap-40">
+        <h2 className="mt-32">Vendors</h2>
+        <div className="vendor-list grid grid-cols-4 gap-40 place-items-center m-20">
           {featured_vendors.map((vendor) => (
             <Link href={vendor.relative_link} key={vendor.id}>
               <VendorItem vendor={vendor} />

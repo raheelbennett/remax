@@ -33,17 +33,22 @@ const SubNav = () => {
   useEffect(() => {
     const getCategories = async () => {
       const { data } = await axios.get("/api/categories/featured");
-      setCategories(data);
+      setCategories(data.sort((a, b) => a.id - b.id));
     };
     getCategories();
   }, []);
 
   return (
-    <div className="sub-nav p-2 bg-blue-200 text-black rounded-md mx-2">
-      <ul className="flex justify-between">
+    <div className="sub-nav p-8 bg-slate-200 w-80 h-1/2 text-black rounded-md mx-2">
+      <ul className="flex flex-col">
         {categories.map((category) => (
-          <li key={category.id}>
-            <Link href={`/categories/${category.name}`}>{category.name}</Link>
+          <li key={category.id} className="basis-20">
+            <Link
+              href={`/categories/${category.name}`}
+              className="font-sans font-semibold text-2xl"
+            >
+              {category.name}
+            </Link>
           </li>
         ))}
       </ul>
