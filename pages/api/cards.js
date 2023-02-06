@@ -9,6 +9,4 @@ export default function handler(req, res) {
     .catch((error) => {
       return res.json(error);
     });
-
-  
 }
