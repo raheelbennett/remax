@@ -83,7 +83,7 @@ export default function home({ featured_cards, featured_vendors, categories }) {
           {categories.map((category) => (
             <li key={category.id} className="basis-20">
               <Link
-                href={`/categories/${category.name}`}
+                href={`/categories/${category.id}`}
                 className="font-sans font-semibold text-2xl"
               >
                 {category.name}
