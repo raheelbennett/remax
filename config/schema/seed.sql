@@ -41,7 +41,10 @@ VALUES
 ('Rogers World Elite Mastercard',19.99,0.00,7, true, 'rogers-world-elite.png' ),
 ('AMEX SimplyCash Preferred Card', 20.99, 119.88, 2, true, 'amex-simplycash-preferred.png'),
 ('Tangerine World Mastercard',19.95,0.00,3, true, 'tangerine-world.png'),
-('Amazon.ca Rewards Mastercard',19.99, 0.00,8, true, 'amazon-rewards.png');
+('Amazon.ca Rewards Mastercard',19.99, 0.00,8, true, 'amazon-rewards.png'),
+('AMEX Air Miles Platinum Card', 20.99, 119.88, 2, true, 'amex-air-miles-platinum.png'),
+('RBC Avion Infinite VISA', 19.99, 119.88, 5, true, 'rbc-avion-infinite.png'),
+('AMEX Green Card', 20.99, 0.00, 2, true, 'amex-green.png');
 
 INSERT INTO rewards (reward_rate, card_id,category_id)
 VALUES
@@ -75,7 +78,7 @@ VALUES
 ('Amazon',11, true, 'amazon.png', '/vendor/amazon' ),
 ('Telus', 2, true,'telus.png','/vendor/telus'),
 ('Rogers',2, false, 'rogers.png', '/vendor/rogers'),
-('McDonalds', 5, false, 'mcdonalds.png', '/vendor/mcdonalds'),
+('McDonalds', 5, true, 'mcdonalds.png', '/vendor/mcdonalds'),
 ('The Keg', 5, true, 'the-keg.jpeg', '/vendor/the-keg'),
 ('Moxies', 5, true, 'moxies.jpeg', '/vendor/moxies'),
 ('Boston Pizza', 5, true, 'boston-pizza.png', '/vendor/boston-pizza'),
