@@ -29,14 +29,13 @@ const categories = [
   },
 ];
 const SubNav = () => {
-  const [categories, setCategories] = useState([]);
-  useEffect(() => {
-    const getCategories = async () => {
-      const { data } = await axios.get("/api/categories/featured");
-      setCategories(data);
-    };
-    getCategories();
-  }, []);
+  //   const [categories, setCategories] = useState([]);
+  //   useEffect(() => {
+  //     axios.get("/api/categories/featured").then((data) => {
+  //       console.log("categories data", data.data);
+  //       // setCategories(data));
+  //     });
+  //   }, []);
 
   return (
     <div className="sub-nav p-2 bg-blue-200 text-black rounded-md mx-2">

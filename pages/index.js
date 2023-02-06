@@ -2,6 +2,7 @@ import Link from "next/link";
 import CardItem from "../components/cards/CardItem";
 import VendorItem from "../components/vendors/VendorItem";
 import CardsList from "../components/cards/CardsList";
+import { getFeaturedCards, getFeaturedVendors } from "@/config/queries/helper";
 
 // const vendors = [
 //   {
@@ -98,11 +99,12 @@ export default function home({ featured_cards, featured_vendors }) {
 }
 
 export async function getServerSideProps() {
-  const data1 = await fetch("http://localhost:3000/api/cards/featured");
-  const featured_cards = await data1.json();
+  const featured_cards = await getFeaturedCards();
+  console.log("data1", featured_cards);
+  // const  = await data1.json();
 
-  const data2 = await fetch("http://localhost:3000/api/vendors/featured");
-  const featured_vendors = await data2.json();
+  const featured_vendors = await getFeaturedVendors();
+  // const  = await data2.json();
 
   // Pass data to the page via props
   return { props: { featured_cards, featured_vendors } };
