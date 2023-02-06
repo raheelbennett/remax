@@ -2,7 +2,11 @@ import Link from "next/link";
 import CardItem from "../components/cards/CardItem";
 import VendorItem from "../components/vendors/VendorItem";
 import CardsList from "../components/cards/CardsList";
-import { getFeaturedCategories, getFeaturedCards, getFeaturedVendors } from "@/config/queries/helper";
+import {
+  getFeaturedCategories,
+  getFeaturedCards,
+  getFeaturedVendors,
+} from "@/config/queries/helper";
 
 // const vendors = [
 //   {
@@ -73,7 +77,21 @@ import { getFeaturedCategories, getFeaturedCards, getFeaturedVendors } from "@/c
 
 export default function home({ featured_cards, featured_vendors, categories }) {
   return (
-    <main>
+    <main className="flex">
+      <div className="sub-nav p-8 bg-slate-200 w-80 h-1/2 text-black rounded-md mx-2">
+        <ul className="flex flex-col">
+          {categories.map((category) => (
+            <li key={category.id} className="basis-20">
+              <Link
+                href={`/categories/${category.name}`}
+                className="font-sans font-semibold text-2xl"
+              >
+                {category.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
       <section className="main-content">
         <h2>Featured Cards</h2>
         <div className="card-list grid grid-cols-4 gap-40 m-20">
