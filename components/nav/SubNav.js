@@ -28,20 +28,20 @@ import { useEffect, useState } from "react";
 //     slug: "recurring-bills",
 //   },
 // ];
-const SubNav = () => {
-  const [categories, setCategories] = useState([]);
-  useEffect(() => {
-    const getCategories = async () => {
-      const { data } = await axios.get("/api/categories/featured");
-      setCategories(data.sort((a, b) => a.id - b.id));
-    };
-    getCategories();
-  }, []);
+const SubNav = ({ subNavProps }) => {
+  // const [categories, setCategories] = useState([]);
+  // useEffect(() => {
+  //   const getCategories = async () => {
+  //     const { data } = await axios.get("/api/categories/featured");
+  //     setCategories(data.sort((a, b) => a.id - b.id));
+  //   };
+  //   getCategories();
+  // }, []);
 
   return (
     <div className="sub-nav p-8 bg-slate-200 w-80 h-1/2 text-black rounded-md mx-2">
       <ul className="flex flex-col">
-        {categories.map((category) => (
+        {subNavProps.map((category) => (
           <li key={category.id} className="basis-20">
             <Link
               href={`/categories/${category.name}`}

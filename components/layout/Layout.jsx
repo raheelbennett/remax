@@ -2,13 +2,13 @@ import Header from "./Header";
 import Footer from "./Footer";
 import SubNav from "../nav/SubNav";
 import SearchBar from "../SearchBar";
-const Layout = ({ children }) => {
+const Layout = ({ children, subNavProps }) => {
   return (
     <div>
       <Header />
       <SearchBar />
       <div className="flex">
-        <SubNav />
+        <SubNav subNavProps={subNavProps}/>
         {children}
       </div>
     </div>

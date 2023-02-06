@@ -8,7 +8,7 @@ const getBanks = () => {
 };
 const getCategories = () => {
   return db
-    .query("SELECT name FROM categories ORDER BY name;")
+    .query("SELECT * FROM categories ORDER BY name;")
     .then((data) => data.rows)
     .catch((err) => err.message);
 };
