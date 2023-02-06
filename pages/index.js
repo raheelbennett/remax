@@ -78,8 +78,8 @@ export default function home({ featured_cards, featured_vendors }) {
         <h2>Cards</h2>
         <div className="card-list grid grid-cols-4 gap-40">
           {featured_cards.map((card) => (
-            <Link href="/cards/[id]" as={`/cards/${card.id}`}>
-              <CardItem card={card} key={card.id} />
+            <Link href="/cards/[id]" as={`/cards/${card.id}`} key={card.id}>
+              <CardItem card={card} />
             </Link>
           ))}
         </div>
@@ -88,8 +88,8 @@ export default function home({ featured_cards, featured_vendors }) {
 
         <div className="vendor-list grid grid-cols-4 gap-40">
           {featured_vendors.map((vendor) => (
-            <Link href={vendor.relative_link}>
-              <VendorItem vendor={vendor} key={vendor.id} />
+            <Link href={vendor.relative_link} key={vendor.id}>
+              <VendorItem vendor={vendor} />
             </Link>
           ))}
         </div>
@@ -100,12 +100,7 @@ export default function home({ featured_cards, featured_vendors }) {
 
 export async function getServerSideProps() {
   const featured_cards = await getFeaturedCards();
-  console.log("data1", featured_cards);
-  // const  = await data1.json();
-
   const featured_vendors = await getFeaturedVendors();
-  // const  = await data2.json();
 
-  // Pass data to the page via props
   return { props: { featured_cards, featured_vendors } };
 }
