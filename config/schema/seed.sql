@@ -37,7 +37,7 @@ VALUES
 
 INSERT INTO cards (name, interest_rate, annual_fee, bank_id, featured, img_url)
 VALUES
-('BMO CashBack World Elite Mastercard',20.99, 120, 9, true, 'bmo-cash-back-world-elite.webp'),
+('BMO World Elite Mastercard',20.99, 120, 9, true, 'bmo-cash-back-world-elite.webp'),
 ('Rogers World Elite Mastercard',19.99,0.00,7, true, 'rogers-world-elite.png' ),
 ('AMEX SimplyCash Preferred Card', 20.99, 119.88, 2, true, 'amex-simplycash-preferred.png'),
 ('Tangerine World Mastercard',19.95,0.00,3, true, 'tangerine-world.png'),
