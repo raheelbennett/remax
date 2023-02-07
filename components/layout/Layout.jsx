@@ -7,8 +7,8 @@ const Layout = ({ children }) => {
     <div>
       <Header />
       <SearchBar />
-      <div>
-        {/* <SubNav subNavProps={subNavProps}/> */}
+      <div className="flex">
+        <SubNav />
         {children}
       </div>
     </div>

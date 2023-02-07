@@ -5,7 +5,6 @@ export default function App({ Component, pageProps }) {
   return (
     <Layout subNavProps={pageProps.categories}>
       <Component {...pageProps} />
-      {console.log("pageProps", pageProps)}
     </Layout>
   );
 }

@@ -3,7 +3,7 @@ import CardItem from "../components/cards/CardItem";
 import VendorItem from "../components/vendors/VendorItem";
 import CardsList from "../components/cards/CardsList";
 import {
-  getFeaturedCategories,
+  // getFeaturedCategories,
   getFeaturedCards,
   getFeaturedVendors,
 } from "@/config/queries/helper";
@@ -78,7 +78,7 @@ import {
 export default function home({ featured_cards, featured_vendors, categories }) {
   return (
     <main className="flex">
-      <div className="sub-nav p-8 bg-slate-200 w-80 h-1/2 text-black rounded-md mx-2">
+      {/* <div className="sub-nav p-8 bg-slate-200 w-80 h-1/2 text-black rounded-md mx-2">
         <ul className="flex flex-col">
           {categories.map((category) => (
             <li key={category.id} className="basis-20">
@@ -91,7 +91,7 @@ export default function home({ featured_cards, featured_vendors, categories }) {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
       <section className="main-content">
         <h2>Featured Cards</h2>
         <div className="card-list grid grid-cols-4 gap-40 m-20">
@@ -118,7 +118,7 @@ export default function home({ featured_cards, featured_vendors, categories }) {
 export async function getServerSideProps() {
   const featured_cards = await getFeaturedCards();
   const featured_vendors = await getFeaturedVendors();
-  const categories = await getFeaturedCategories();
+  // const categories = await getFeaturedCategories();
 
-  return { props: { featured_cards, featured_vendors, categories } };
+  return { props: { featured_cards, featured_vendors } };
 }
