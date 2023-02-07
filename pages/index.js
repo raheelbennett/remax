@@ -10,24 +10,31 @@ import {
 
 export default function home({ featured_cards, featured_vendors, categories }) {
   return (
-    <main className="flex">
+    <main className="">
       <section className="main-content">
-        <h2>Featured Cards</h2>
-        <div className="card-list grid grid-cols-4 gap-40 m-20">
-          {featured_cards.map((card) => (
-            <Link href="/cards/[id]" as={`/cards/${card.id}`} key={card.id}>
-              <CardItem card={card} />
-            </Link>
-          ))}
+        <div>
+          <h2 className="text-center font-semibold text-3xl">
+            DISCOVER CASHBACK REWARDS WITH YOUR CREDIT CARDS
+          </h2>
+          <div className="card-list grid grid-cols-4 gap-40 m-20">
+            {featured_cards.map((card) => (
+              <Link href="/cards/[id]" as={`/cards/${card.id}`} key={card.id}>
+                <CardItem card={card} />
+              </Link>
+            ))}
+          </div>
         </div>
-
-        <h2 className="mt-32">Featured Vendors</h2>
-        <div className="vendor-list grid grid-cols-4 gap-40 place-items-center m-20">
-          {featured_vendors.map((vendor) => (
-            <Link href={vendor.relative_link} key={vendor.id}>
-              <VendorItem vendor={vendor} />
-            </Link>
-          ))}
+        <div>
+          <h2 className="mt-32 text-center italic text-2xl">
+            ENJOY MOVIES, TRAVEL, SHOPPING, DINING, GROCERIES, AND MORE
+          </h2>
+          <div className="vendor-list grid grid-cols-4 gap-40 place-items-center m-20">
+            {featured_vendors.map((vendor) => (
+              <Link href={vendor.relative_link} key={vendor.id}>
+                <VendorItem vendor={vendor} />
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </main>
