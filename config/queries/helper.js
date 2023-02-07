@@ -6,6 +6,12 @@ const getBanks = () => {
     .then((data) => data.rows)
     .catch((err) => err.message);
 };
+const getListingsByCardID = (id) => {
+  return db
+    .query("SELECT * FROM listings JOIN vendors on vendor=vendors.id WHERE card_id = $1 ;", [id])
+    .then((data) => data.rows)
+    .catch((err) => err.message);
+};
 const getCategories = () => {
   return db
     .query("SELECT * FROM categories ORDER BY name;")
@@ -77,4 +83,5 @@ module.exports = {
   getFeaturedCategories,
   getFeaturedVendors,
   getFeaturedCards,
+  getListingsByCardID
 };

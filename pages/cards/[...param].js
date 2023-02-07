@@ -1,12 +1,12 @@
 import React from 'react';
 import { useRouter } from "next/router";
 import CardItem from "@/components/cards/CardItem";
-import { getCashbackByID } from "@/config/queries/helper";
+import { getCashbackByID, getListingsByCardID } from "@/config/queries/helper";
 
-const Cards = ({ cards }) => {
+const Cards = ({ cards, vendors }) => {
   const router = useRouter();
   const { param } = router.query;
-console.log(cards);
+console.log("does it", vendors);
   if (param === "all") {
     return <div>All</div>;
   }
@@ -20,7 +20,7 @@ console.log(cards);
         <div className="font-xl text-3xl align-middle mb-2">
             Cashback Rates 
           </div>
-          <br></br>
+         <br></br>
           {cards.map((card) => (
           <div className="text-sm text-gray-900">
             <div>{card.category}:</div> 
@@ -28,7 +28,20 @@ console.log(cards);
             </div>
           ))}
         </div>
+        {
+        vendors.length > 0 &&   
+        <>
+        <br></br>
+        <div className="text-sm text-gray-900">
+            {vendors[0].name} Eligible Purchases
+          </div>
+           <div className="text-sm text-gray-900">
+           <div>{vendors[0].reward_rate}%</div> 
         </div>
+           </>
+          }
+      
+      </div>
       </div>
 
     </section>
@@ -40,8 +53,8 @@ console.log(cards);
 
 export async function getServerSideProps({ query }) {
   const cards = await getCashbackByID(query.param[0]);
-
-  return { props: { cards } };
+  const vendors = await getListingsByCardID(query.param[0])
+  return { props: { cards, vendors } };
 }
 
 export default Cards;

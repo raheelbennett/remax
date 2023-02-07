@@ -31,7 +31,8 @@ CREATE TABLE
         img_url TEXT,
         slug TEXT,
         featured BOOLEAN DEFAULT FALSE,
-        bank_id INTEGER REFERENCES banks(id) ON DELETE CASCADE
+        bank_id INTEGER REFERENCES banks(id) ON DELETE CASCADE,
+        link TEXT
     );
 
 CREATE TABLE
@@ -75,7 +76,8 @@ CREATE TABLE
         category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE,
         img_url TEXT,
         slug TEXT,
-        relative_link TEXT
+        relative_link TEXT,
+        link TEXT
     );
 
 CREATE TABLE
