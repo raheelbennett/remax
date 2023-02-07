@@ -3,12 +3,12 @@ import React from "react";
 
 const VendorItem = ({ vendor }) => {
   return (
-    <div className="p-2">
+    <div>
       <Image
         alt={vendor.name}
         src={`/assets/img/vendor/${vendor.img_url}`}
-        width={300}
-        height={300}
+        width={200}
+        height={200}
       />
     </div>
   );

@@ -31,7 +31,7 @@ const SubNav = () => {
   return (
     <div className="w-fit font-extrabold	">
       <Sidebar aria-label="Sidebar with multi-level dropdown" className="bg-slate-200 ">
-        <Sidebar.Items className="sub-nav p-8  bg-slate-200 w-80 rounded">
+        <Sidebar.Items className="sub-nav p-8  bg-slate-200 rounded md:w-80">
           <Sidebar.ItemGroup className="">
             <Sidebar.Collapse className=" text-4xl" label="Categories">
               {state.categories.map((category) => (
