@@ -7,6 +7,7 @@ const SearchBar = () => {
   return (
     <div className="p-3 w-max flex mr-auto ml-auto my-15">
       <Dropdown label={filter} className="">
+        <Dropdown.Item onClick={() => setFilter("All")}>All</Dropdown.Item>
         <Dropdown.Item onClick={() => setFilter("Cards")}>Cards</Dropdown.Item>
         <Dropdown.Item onClick={() => setFilter("Categories")}>Categories</Dropdown.Item>
         <Dropdown.Item onClick={() => setFilter("Vendors")}>Vendors</Dropdown.Item>

@@ -1,5 +1,5 @@
 import { getFeaturedCards } from "@/config/queries/helper";
 
-export default function handler(req, res) {
-  getFeaturedCards().then((data) => res.status(200).json(data));
+export default async function handler(req, res) {
+  await getFeaturedCards().then((data) => res.status(200).json(data));
 }
