@@ -24,15 +24,8 @@ const Category = ({categories}) => {
     <div className="p-6 rounded-lg shadow-md" key={card.id}>
       <Link href="/cards/[id]" as={`/cards/${card.id}`}>
         <div className=" grid grid-template-columns: 3fr">
-          <div className="col-start-1 col-end-2">
-            <Image
-              alt={card.name}
-              src={`/assets/img/card/${card.img_url}`}
-              width={300} height={300}
-              className="object-cover object-center"
-            />
-          </div>
-          <div className="col-start-2 col-end-3 p-4">
+        <CardItem card={card}/>
+          <div className="col-start-2 col-end-3 ">
             <h3 className="text-xl font-bold">{card.name}</h3>
             <div className="text-sm text-gray-900">
               Cashback Rate for {card.category}: {card.cashback}%
