@@ -2,13 +2,13 @@ const db = require("../db.js");
 
 const getBanks = () => {
   return db
-    .query("SELECT name FROM banks ORDER BY name;")
+    .query("SELECT * FROM banks ORDER BY name;")
     .then((data) => data.rows)
     .catch((err) => err.message);
 };
 const getCategories = () => {
   return db
-    .query("SELECT * FROM categories ORDER BY name;")
+    .query("SELECT * FROM categories ORDER BY id;")
     .then((data) => data.rows)
     .catch((err) => err.message);
 };
@@ -18,12 +18,27 @@ const getFeaturedCategories = () => {
     .then((data) => data.rows)
     .catch((err) => err.message);
 };
+const getVendors = () => {
+  return db
+    .query("SELECT * FROM vendors ORDER BY name;")
+    .then((data) => data.rows)
+    .catch((err) => err.message);
+};
+
 const getFeaturedVendors = () => {
   return db
     .query("SELECT * FROM vendors WHERE featured = true;")
     .then((data) => data.rows)
     .catch((err) => err.message);
 };
+
+const getCards = () => {
+  return db
+    .query("SELECT * FROM cards ORDER BY name ;")
+    .then((data) => data.rows)
+    .catch((err) => err.message);
+};
+
 const getFeaturedCards = () => {
   return db
     .query("SELECT * FROM cards WHERE featured = true;")
@@ -61,7 +76,8 @@ const getAllCashback = () => {
 const getCashbackByID = (id) => {
   return db
     .query(
-      "SELECT categories.name as category, reward_rate as Cashback, cards.name , cards.img_url , cards.interest_rate , cards.annual_fee from rewards JOIN categories on category_id=categories.id JOIN cards on card_id=cards.id WHERE card_id = $1 ORDER BY Cashback DESC;", [id]
+      "SELECT categories.name as category, reward_rate as Cashback, cards.name , cards.img_url , cards.interest_rate , cards.annual_fee from rewards JOIN categories on category_id=categories.id JOIN cards on card_id=cards.id WHERE card_id = $1 ORDER BY Cashback DESC;",
+      [id]
     )
     .then((data) => data.rows)
     .catch((err) => err.message);
@@ -69,6 +85,7 @@ const getCashbackByID = (id) => {
 
 module.exports = {
   getBanks,
+  getVendors,
   getCategoriesByCardID,
   getCategoriesByID,
   getAllCashback,
@@ -77,4 +94,5 @@ module.exports = {
   getFeaturedCategories,
   getFeaturedVendors,
   getFeaturedCards,
+  getCards,
 };

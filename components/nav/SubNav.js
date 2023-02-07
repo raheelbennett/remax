@@ -4,13 +4,28 @@ import { useEffect, useState } from "react";
 import { Sidebar } from "flowbite-react";
 
 const SubNav = () => {
-  const [categories, setCategories] = useState([]);
+  const [state, setState] = useState({
+    categories: [],
+    vendors: [],
+    banks: [],
+    cards: [],
+  });
+
   useEffect(() => {
-    const getCategories = async () => {
-      const { data } = await axios.get("/api/categories/featured");
-      setCategories(data.sort((a, b) => a.id - b.id));
-    };
-    getCategories();
+    Promise.all([
+      axios.get("/api/categories"),
+      axios.get("/api/vendors"),
+      axios.get("/api/banks"),
+      axios.get("/api/cards"),
+    ]).then((all) => {
+      setState((prev) => ({
+        ...prev,
+        categories: all[0].data,
+        vendors: all[1].data,
+        banks: all[2].data,
+        cards: all[3].data,
+      }));
+    });
   }, []);
 
   return (
@@ -19,26 +34,37 @@ const SubNav = () => {
         <Sidebar.Items className="sub-nav p-8  bg-slate-200 w-80 rounded">
           <Sidebar.ItemGroup className="">
             <Sidebar.Collapse className=" text-4xl" label="Categories">
-              {categories.map((category) => (
+              {state.categories.map((category) => (
                 <Sidebar.Item key={category.id} href={`/categories/${category.id}`}>
                   {category.name}
                 </Sidebar.Item>
               ))}
             </Sidebar.Collapse>
             <Sidebar.Collapse className=" text-4xl" label="Vendors">
-              <Sidebar.Item href="#">Products</Sidebar.Item>
+              {state.vendors.map((vendor) => (
+                <Sidebar.Item key={vendor.id} href={`/categories/${vendor.id}`}>
+                  {vendor.name}
+                </Sidebar.Item>
+              ))}
             </Sidebar.Collapse>
             <Sidebar.Collapse className=" text-4xl" label="Banks">
-              <Sidebar.Item href="#">Products</Sidebar.Item>
+              {state.banks.map((bank) => (
+                <Sidebar.Item key={bank.id} href={`/categories/${bank.id}`}>
+                  {bank.name}
+                </Sidebar.Item>
+              ))}
             </Sidebar.Collapse>
             <Sidebar.Collapse className=" text-4xl" label="Cards">
-              <Sidebar.Item href="#">Products</Sidebar.Item>
+              {state.cards.map((card) => (
+                <Sidebar.Item key={card.id} href={`/categories/${card.id}`}>
+                  {card.name}
+                </Sidebar.Item>
+              ))}
             </Sidebar.Collapse>
-            <Sidebar.Item href="#">Inbox</Sidebar.Item>
-            <Sidebar.Item href="#">Users</Sidebar.Item>
-            <Sidebar.Item href="#">Products</Sidebar.Item>
-            <Sidebar.Item href="#">Sign In</Sidebar.Item>
-            <Sidebar.Item href="#">Sign Up</Sidebar.Item>
+            <Sidebar.Item href="/about">About</Sidebar.Item>
+            <Sidebar.Item href="/signin">Sign In</Sidebar.Item>
+            <Sidebar.Item href="/register">Register</Sidebar.Item>
+            <Sidebar.Item href="/">Home</Sidebar.Item>
           </Sidebar.ItemGroup>
         </Sidebar.Items>
       </Sidebar>
