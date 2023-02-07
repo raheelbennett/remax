@@ -70,7 +70,15 @@ VALUES
 (2,4,10),
 (0.5,4,11),
 (2.5,5,12),
+(2.3,6,5),
+(2.3,6,9),
+(2.3,6,10),
+(1,6,11),
+(1,7,11),
+(1,8,11),
+(2,8,7),
 (1,5,11);
+
 
 INSERT INTO vendors (name,category_id, featured, img_url, relative_link)
 VALUES
