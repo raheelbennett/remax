@@ -10,12 +10,12 @@ import {
 
 export default function home({ featured_cards, featured_vendors }) {
   return (
-    <main className="">
+    <main className="main-container mx-auto">
       <section className="border-b-8">
         <h2 className="text-center md:text-3xl md:font-semibold">
           DISCOVER CASHBACK REWARDS WITH YOUR CREDIT CARDS
         </h2>
-        <div className="card-list grid grid-cols-2 gap-8 md:grid-cols-4">
+        <div className="card-list grid grid-cols-2 gap-8 my-10 md:grid-cols-4 ">
           {featured_cards.map((card) => (
             <Link href="/cards/[id]" as={`/cards/${card.id}`} key={card.id} className="w-fit m-4">
               <CardItem card={card} />
