@@ -6,7 +6,7 @@ import { getCashbackByID } from "@/config/queries/helper";
 const Cards = ({ cards }) => {
   const router = useRouter();
   const { param } = router.query;
-
+console.log(cards);
   if (param === "all") {
     return <div>All</div>;
   }
