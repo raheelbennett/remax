@@ -44,7 +44,7 @@ const getCategoriesByCardID = (id) => {
 const getCategoriesByID = (id) => {
   return db
     .query(
-      "SELECT categories.name as category, reward_rate as Cashback, cards.* as cards FROM rewards JOIN categories on category_id=categories.id JOIN cards on card_id=cards.id WHERE category_id = $1 ORDER BY Cashback DESC;",
+      "SELECT categories.name as category, reward_rate as Cashback, cards.* as cards FROM rewards JOIN categories on category_id=categories.id JOIN cards on card_id=cards.id WHERE category_id = $1 ORDER BY Cashback DESC, cards.annual_fee ASC;",
       [id]
     )
     .then((data) => data.rows)
