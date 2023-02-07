@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
       return <div>All</div>;
     }
     const main = listings[0]
+    console.log(listings)
     return (
       <section>
       <VendorItem vendor={vendor[0]} />
@@ -38,8 +39,9 @@ import { useRouter } from "next/router";
       </div>}
 
         {categories.map((card) => {
-          return (
-      card.id !== main.card_id &&
+         
+      if(listings.length < 1 || main.card_id !== card.id) { 
+        return(
           <div className="p-6 rounded-lg shadow-md" key={card.id}>
             <Link href="/cards/[id]" as={`/cards/${card.id}`}>
               <div className=" grid grid-template-columns: 3fr">
@@ -54,8 +56,8 @@ import { useRouter } from "next/router";
                 </div>
               </div>
             </Link>
-          </div>
-        )}
+          </div>)}
+        }
       )}
       </div>
 
