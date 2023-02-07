@@ -11,8 +11,8 @@ import {
 export default function home({ featured_cards, featured_vendors }) {
   return (
     <main className="">
-      <section className="border-b-8 p-20">
-        <h2 className="text-center font-semibold md:text-3xl">
+      <section className="border-b-8">
+        <h2 className="text-center md:text-3xl md:font-semibold">
           DISCOVER CASHBACK REWARDS WITH YOUR CREDIT CARDS
         </h2>
         <div className="card-list grid grid-cols-2 gap-8 md:grid-cols-4">
