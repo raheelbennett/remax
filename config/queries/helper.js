@@ -21,7 +21,7 @@ const getListingsByVendor = (id) => {
 
 const getCategories = () => {
   return db
-    .query("SELECT * FROM categories ORDER BY id;")
+    .query("SELECT * FROM categories ORDER BY featured desc, name;")
     .then((data) => data.rows)
     .catch((err) => err.message);
 };

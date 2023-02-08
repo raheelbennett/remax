@@ -7,7 +7,7 @@ VALUES
 ('Restaurants', true),
 ('Home Improvement', false),
 ('Hotel', false),
-('Entertainment', false),
+('Entertainment', true),
 ('Gas', true),
 ('Transit', true),
 ('Other', false),
