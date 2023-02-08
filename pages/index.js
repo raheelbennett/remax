@@ -2,15 +2,11 @@ import Link from "next/link";
 import CardItem from "../components/cards/CardItem";
 import VendorItem from "../components/vendors/VendorItem";
 import CardsList from "../components/cards/CardsList";
-import {
-  // getFeaturedCategories,
-  getFeaturedCards,
-  getFeaturedVendors,
-} from "@/config/queries/helper";
+import { getFeaturedCards, getFeaturedVendors } from "@/config/queries/helper";
 
 export default function home({ featured_cards, featured_vendors }) {
   return (
-    <main className="container mx-auto">
+    <main className="mx-auto">
       <section className="border-b-8">
         <h2 className="text-center md:text-3xl md:font-semibold">
           DISCOVER CASHBACK REWARDS WITH YOUR CREDIT CARDS

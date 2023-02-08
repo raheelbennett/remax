@@ -14,7 +14,10 @@ const getListingsByCardID = (id) => {
 };
 const getListingsByVendor = (id) => {
   return db
-    .query("SELECT * FROM listings JOIN vendors on vendor=vendors.id JOIN cards on card_id=cards.id WHERE vendor = $1 ;", [id])
+    .query(
+      "SELECT * FROM listings JOIN vendors on vendor=vendors.id JOIN cards on card_id=cards.id WHERE vendor = $1 ;",
+      [id]
+    )
     .then((data) => data.rows)
     .catch((err) => err.message);
 };
@@ -84,6 +87,15 @@ const getCategoriesByID = (id) => {
     .then((data) => data.rows)
     .catch((err) => err.message);
 };
+const getCardsByBankID = (id) => {
+  return db
+    .query(
+      "SELECT banks.name as bank, cards.* as cards FROM cards JOIN banks on bank_id=banks.id WHERE bank_id = $1;",
+      [id]
+    )
+    .then((data) => data.rows)
+    .catch((err) => err.message);
+};
 // const getAllCashback = () => {
 //   return db
 //     .query(
@@ -93,11 +105,17 @@ const getCategoriesByID = (id) => {
 //     .catch((err) => err.message);
 // };
 const getCashbackByID = (id) => {
+  let cardIds = "(";
+  for (let i = 0; i < id.length; i++) {
+    if (i === id.length - 1) {
+      cardIds = cardIds + id[i] + ")";
+    } else {
+      cardIds = cardIds + id[i] + ", ";
+    }
+  }
+  const queryTxt = `SELECT categories.name as category, reward_rate as Cashback, cards.* from rewards JOIN categories on category_id=categories.id JOIN cards on card_id=cards.id WHERE card_id IN ${cardIds} GROUP BY categories.name, rewards.reward_rate, cards.id ORDER BY Cashback DESC;`;
   return db
-    .query(
-      "SELECT categories.name as category, reward_rate as Cashback, cards.* from rewards JOIN categories on category_id=categories.id JOIN cards on card_id=cards.id WHERE card_id = $1 ORDER BY Cashback DESC;",
-      [id]
-    )
+    .query(queryTxt)
     .then((data) => data.rows)
     .catch((err) => err.message);
 };
@@ -116,5 +134,6 @@ module.exports = {
   getFeaturedVendors,
   getFeaturedCards,
   getCards,
-  getListingsByCardID
+  getListingsByCardID,
+  getCardsByBankID,
 };

@@ -13,12 +13,12 @@ const Category = ({ categories }) => {
   }
   return (
     <section>
-      <h2 className="text-xl font-bold mb-4">{categories[0]["category"]}</h2>
+      <h2 className="text-2xl font-bold m-8">{categories[0]["category"]}</h2>
       <div className="card-list grid grid-cols-1 gap-10 m-10">
         {categories.map((card) => (
           <div className="p-6 rounded-lg shadow-md" key={card.id}>
             <Link href="/cards/[id]" as={`/cards/${card.id}`}>
-              <div className=" grid grid-template-columns: 3fr">
+              <div className=" grid grid-cols-2">
                 <CardItem card={card} />
                 <div className="col-start-2 col-end-3 ">
                   <h3 className="text-xl font-bold">{card.name}</h3>
@@ -33,7 +33,6 @@ const Category = ({ categories }) => {
           </div>
         ))}
       </div>
-
     </section>
   );
 };

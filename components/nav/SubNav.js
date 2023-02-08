@@ -49,7 +49,7 @@ const SubNav = () => {
             </Sidebar.Collapse>
             <Sidebar.Collapse className=" text-4xl" label="Banks">
               {state.banks.map((bank) => (
-                <Sidebar.Item key={bank.id} href={`/categories/${bank.id}`}>
+                <Sidebar.Item key={bank.id} href={`/bank/${bank.id}`}>
                   {bank.name}
                 </Sidebar.Item>
               ))}
