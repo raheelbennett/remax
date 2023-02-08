@@ -10,7 +10,7 @@ import {
 
 export default function home({ featured_cards, featured_vendors }) {
   return (
-    <main className="main-container mx-auto">
+    <main className="container mx-auto">
       <section className="border-b-8">
         <h2 className="text-center md:text-3xl md:font-semibold">
           DISCOVER CASHBACK REWARDS WITH YOUR CREDIT CARDS
