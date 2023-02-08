@@ -18,6 +18,7 @@ console.log("does it", vendors);
 
       <h2 className="p-2 lg:px-3 mx-2 text-xl font-bold text-center mb-4">{cards[0]["name"]}</h2>
         <CardItem card={cards[0]} />
+        <br></br>
         <div className="font-xl text-3xl align-middle px-3 text-center mb-2"> Cashback Rates 
           </div>
           <br></br>

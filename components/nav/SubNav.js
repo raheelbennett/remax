@@ -42,7 +42,7 @@ const SubNav = () => {
             </Sidebar.Collapse>
             <Sidebar.Collapse className=" text-4xl" label="Vendors">
               {state.vendors.map((vendor) => (
-                <Sidebar.Item key={vendor.id} href={`/categories/${vendor.id}`}>
+                <Sidebar.Item key={vendor.id} href={`${vendor.relative_link}`}>
                   {vendor.name}
                 </Sidebar.Item>
               ))}
@@ -56,7 +56,7 @@ const SubNav = () => {
             </Sidebar.Collapse>
             <Sidebar.Collapse className=" text-4xl" label="Cards">
               {state.cards.map((card) => (
-                <Sidebar.Item key={card.id} href={`/categories/${card.id}`}>
+                <Sidebar.Item key={card.id} href={`/cards/${card.id}`}>
                   {card.name}
                 </Sidebar.Item>
               ))}

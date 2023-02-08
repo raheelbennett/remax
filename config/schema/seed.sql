@@ -119,4 +119,5 @@ VALUES
 
 INSERT INTO listings(reward_rate, vendor , card_id)
 VALUES
-(2.5,2,5);
+(2.5,2,5),
+(1.5,4,2);
