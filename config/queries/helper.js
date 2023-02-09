@@ -36,7 +36,7 @@ const getFeaturedCategories = () => {
 };
 const getVendors = () => {
   return db
-    .query("SELECT * FROM vendors ORDER BY name;")
+    .query("SELECT vendors.*, categories.name as category FROM vendors JOIN categories on category_id=categories.id ORDER BY name ;")
     .then((data) => data.rows)
     .catch((err) => err.message);
 };

@@ -5,6 +5,7 @@ import { Sidebar } from "flowbite-react";
 import { MdMovieFilter, MdLocalGroceryStore,MdLocalGasStation, MdOutlineFastfood, MdOutlineHandyman, MdOutlineDirectionsBusFilled , MdLocalPharmacy, MdWeekend, MdLocalAtm, MdLocationCity} from "react-icons/md";
 import {BsFillCalendarCheckFill} from "react-icons/bs"
 import { HiDotsCircleHorizontal } from "react-icons/hi"
+import { BiCategory } from "react-icons/bi"
 const SubNav = () => {
   const [state, setState] = useState({
     categories: [],
@@ -30,17 +31,29 @@ const SubNav = () => {
     });
   }, []);
 
-  const CateIcons = [MdMovieFilter, MdLocalGasStation, MdLocalGroceryStore, BsFillCalendarCheckFill, MdOutlineFastfood, MdOutlineDirectionsBusFilled, MdLocalPharmacy,MdWeekend, MdOutlineHandyman, MdLocationCity, HiDotsCircleHorizontal, MdLocalAtm]
-
+  const CateIcons = {
+    Entertainment: MdMovieFilter,
+    Gas: MdLocalGasStation,
+    Grocery: MdLocalGroceryStore,
+    'Recurring Bill': BsFillCalendarCheckFill,
+    Restaurants: MdOutlineFastfood,
+    Transit: MdOutlineDirectionsBusFilled,
+    'Drug Store': MdLocalPharmacy,
+    Furniture: MdWeekend,
+    'Home Improvement': MdOutlineHandyman,
+    Hotel: MdLocationCity,
+    Other: HiDotsCircleHorizontal,
+    USD: MdLocalAtm
+  }
 
   return (
     <div className="w-fit font-extrabold	">
       <Sidebar aria-label="Sidebar with multi-level dropdown" className="bg-slate-200 ">
         <Sidebar.Items className="sub-nav p-8  bg-slate-200 rounded md:w-80">
           <Sidebar.ItemGroup className="">
-            <Sidebar.Collapse className=" text-4xl" label={"Categories"} >
+            <Sidebar.Collapse className=" text-4xl" label={"Categories"} icon={BiCategory} >
               {state.categories.map((category,index) => (
-                <Sidebar.Item icon={CateIcons[index]}>
+                <Sidebar.Item icon={CateIcons[category.name]}>
                   <Link key={category.id} href={`/categories/${category.id}`} scroll={false}>
                     {category.name}
                   </Link>
@@ -49,7 +62,7 @@ const SubNav = () => {
             </Sidebar.Collapse>
             <Sidebar.Collapse className=" text-4xl" label="Vendors">
               {state.vendors.map((vendor) => (
-                <Sidebar.Item>
+                <Sidebar.Item icon={CateIcons[vendor.category]}>
                   <Link key={vendor.id} href={`${vendor.relative_link}`} scroll={false}>
                     {vendor.name}
                   </Link>

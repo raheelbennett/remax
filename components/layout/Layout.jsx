@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Header />
-      <Image alt="background" src={background} quality={100} priority />
+      <Image alt="background" src={background} quality={100} width={1200} className=" mx-auto" priority />
       <div className="flex mt-10">
         <SubNav />
         {children}
