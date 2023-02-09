@@ -5,7 +5,7 @@ const SearchBar = () => {
   const [filter, setFilter] = useState("All");
 
   return (
-    <div className="w-1/4 flex my-15">
+    <div className="w-fit flex my-15">
       <Dropdown label={filter} className="">
         <Dropdown.Item onClick={() => setFilter("All")}>All</Dropdown.Item>
         <Dropdown.Item onClick={() => setFilter("Cards")}>Cards</Dropdown.Item>

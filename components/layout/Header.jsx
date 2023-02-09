@@ -4,8 +4,8 @@ import SearchBar from "../SearchBar";
 
 const Header = () => {
   return (
-    <div>
-      <header className="flex justify-between bg-white text-black items-center p-2">
+    <div className="relative">
+      <header className="flex fixed container mx-auto justify-between bg-white text-black items-center p-2">
         <h1>
           <Link href="/">
             <Image alt="logo" src="/assets/img/logo.png" width={200} height={200} priority />
