@@ -2,7 +2,9 @@ import Link from "next/link";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Sidebar } from "flowbite-react";
-
+import { MdMovieFilter, MdLocalGroceryStore,MdLocalGasStation, MdOutlineFastfood, MdOutlineHandyman, MdOutlineDirectionsBusFilled , MdLocalPharmacy, MdWeekend, MdLocalAtm, MdLocationCity} from "react-icons/md";
+import {BsFillCalendarCheckFill} from "react-icons/bs"
+import { HiDotsCircleHorizontal } from "react-icons/hi"
 const SubNav = () => {
   const [state, setState] = useState({
     categories: [],
@@ -28,14 +30,17 @@ const SubNav = () => {
     });
   }, []);
 
+  const CateIcons = [MdMovieFilter, MdLocalGasStation, MdLocalGroceryStore, BsFillCalendarCheckFill, MdOutlineFastfood, MdOutlineDirectionsBusFilled, MdLocalPharmacy,MdWeekend, MdOutlineHandyman, MdLocationCity, HiDotsCircleHorizontal, MdLocalAtm]
+
+
   return (
     <div className="w-fit font-extrabold	">
       <Sidebar aria-label="Sidebar with multi-level dropdown" className="bg-slate-200 ">
         <Sidebar.Items className="sub-nav p-8  bg-slate-200 rounded md:w-80">
           <Sidebar.ItemGroup className="">
-            <Sidebar.Collapse className=" text-4xl" label="Categories">
-              {state.categories.map((category) => (
-                <Sidebar.Item>
+            <Sidebar.Collapse className=" text-4xl" label={"Categories"} >
+              {state.categories.map((category,index) => (
+                <Sidebar.Item icon={CateIcons[index]}>
                   <Link key={category.id} href={`/categories/${category.id}`} scroll={false}>
                     {category.name}
                   </Link>
