@@ -35,7 +35,7 @@ const SubNav = () => {
           <Sidebar.ItemGroup className="">
             <Sidebar.Collapse className=" text-4xl" label="Categories">
               {state.categories.map((category) => (
-                <Sidebar.Item key={category.id} href={`/categories/${category.id}`}>
+                <Sidebar.Item key={category.id} href={`/categories/${category.id}`} scroll={false}>
                   {category.name}
                 </Sidebar.Item>
               ))}

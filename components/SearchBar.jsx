@@ -5,7 +5,7 @@ const SearchBar = () => {
   const [filter, setFilter] = useState("All");
 
   return (
-    <div className="p-3 w-max flex my-15">
+    <div className="w-1/4 flex my-15">
       <Dropdown label={filter} className="">
         <Dropdown.Item onClick={() => setFilter("All")}>All</Dropdown.Item>
         <Dropdown.Item onClick={() => setFilter("Cards")}>Cards</Dropdown.Item>
@@ -17,7 +17,7 @@ const SearchBar = () => {
       <input
         type="text"
         placeholder="Search"
-        className=" p-2 w-96 bg-slate-200 text-slate-800 text-center rounded"
+        className=" p-2 w-fill bg-slate-200 text-slate-800 text-center rounded"
       />
     </div>
   );
