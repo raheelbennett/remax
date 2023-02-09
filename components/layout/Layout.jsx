@@ -6,8 +6,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Header />
-      <SearchBar />
-      <div className="flex">
+      <div className="flex mt-32">
         <SubNav />
         {children}
       </div>
