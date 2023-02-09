@@ -8,7 +8,7 @@ const Category = ({ categories }) => {
   const router = useRouter();
   const { param } = router.query;
   console.log(categories);
-  if (param === "all") {
+  if (param[0] === "all") {
     return <div>All</div>;
   }
   return (
