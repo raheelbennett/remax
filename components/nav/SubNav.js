@@ -35,29 +35,37 @@ const SubNav = () => {
           <Sidebar.ItemGroup className="">
             <Sidebar.Collapse className=" text-4xl" label="Categories">
               {state.categories.map((category) => (
-                <Sidebar.Item key={category.id} href={`/categories/${category.id}`} scroll={false}>
-                  {category.name}
+                <Sidebar.Item>
+                  <Link key={category.id} href={`/categories/${category.id}`} scroll={false}>
+                    {category.name}
+                  </Link>
                 </Sidebar.Item>
               ))}
             </Sidebar.Collapse>
             <Sidebar.Collapse className=" text-4xl" label="Vendors">
               {state.vendors.map((vendor) => (
-                <Sidebar.Item key={vendor.id} href={`${vendor.relative_link}`}>
-                  {vendor.name}
+                <Sidebar.Item>
+                  <Link key={vendor.id} href={`${vendor.relative_link}`} scroll={false}>
+                    {vendor.name}
+                  </Link>
                 </Sidebar.Item>
               ))}
             </Sidebar.Collapse>
             <Sidebar.Collapse className=" text-4xl" label="Banks">
               {state.banks.map((bank) => (
-                <Sidebar.Item key={bank.id} href={`/bank/${bank.id}`}>
-                  {bank.name}
+                <Sidebar.Item>
+                  <Link key={bank.id} href={`/bank/${bank.id}`} scroll={false}>
+                    {bank.name}
+                  </Link>
                 </Sidebar.Item>
               ))}
             </Sidebar.Collapse>
             <Sidebar.Collapse className=" text-4xl" label="Cards">
               {state.cards.map((card) => (
-                <Sidebar.Item key={card.id} href={`/cards/${card.id}`}>
-                  {card.name}
+                <Sidebar.Item>
+                  <Link key={card.id} href={`/cards/${card.id}`} scroll={false}>
+                    {card.name}
+                  </Link>
                 </Sidebar.Item>
               ))}
             </Sidebar.Collapse>

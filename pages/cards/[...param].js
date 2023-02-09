@@ -15,7 +15,7 @@ const Cards = ({ cards, vendors, all }) => {
         <div className="card-list grid grid-cols-3 gap-10 m-20">
           {all.map((card) => (
             <div className="p-6 rounded-lg shadow-md" key={card.id}>
-              <Link href="/cards/[id]" as={`/cards/${card.id}`}>
+              <Link href={`/cards/${card.id}`} scroll={false}>
                 <div className="">
                   <CardItem card={card} />
                   <div className="col-start-2 col-end-3 ">

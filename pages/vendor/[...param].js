@@ -24,7 +24,7 @@ const Vendor = ({ categories, vendor, listings }) => {
         {/* only if there's listings */}
         {listings.length > 0 && (
           <div className="p-6 rounded-lg shadow-md" key={main.card_id}>
-            <Link href="/cards/[id]" as={`/cards/${main.card_id}`} scroll={false}>
+            <Link href={`/cards/${main.card_id}`} scroll={false}>
               <div className=" grid grid-cols-2">
                 <CardItem card={main} />
                 <div className="col-start-2 col-end-3 ">
@@ -47,7 +47,7 @@ const Vendor = ({ categories, vendor, listings }) => {
           if (listings.length < 1 || main.card_id !== card.id) {
             return (
               <div className="p-6 rounded-lg shadow-md" key={card.id}>
-                <Link href="/cards/[id]" as={`/cards/${card.id}`} scroll={false}>
+                <Link href={`/cards/${card.id}`} scroll={false}>
                   <div className="  grid grid-cols-2">
                     <CardItem card={card} />
                     <div className="col-start-2 col-end-3 ">
