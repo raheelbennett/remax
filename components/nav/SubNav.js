@@ -79,7 +79,7 @@ const SubNav = () => {
                 </Sidebar.Item>
               ))}
             </Sidebar.Collapse>
-            <Sidebar.Collapse className=" text-4xl" icon={HiBuildingStorefront} label="Vendors">
+            <Sidebar.Collapse icon={HiBuildingStorefront} label="Vendors">
               {state.vendors.map((vendor) => (
                 <Sidebar.Item icon={CateIcons[vendor.category]}>
                   <Link key={vendor.id} href={`${vendor.relative_link}`} scroll={false}>
@@ -88,7 +88,7 @@ const SubNav = () => {
                 </Sidebar.Item>
               ))}
             </Sidebar.Collapse>
-            <Sidebar.Collapse className=" text-4xl" label="Banks" icon={BsBank2}>
+            <Sidebar.Collapse label="Banks" icon={BsBank2}>
               {state.banks.map((bank) => (
                 <Sidebar.Item>
                   <Link key={bank.id} href={`/bank/${bank.id}`} scroll={false}>
@@ -97,7 +97,7 @@ const SubNav = () => {
                 </Sidebar.Item>
               ))}
             </Sidebar.Collapse>
-            <Sidebar.Collapse className=" text-4xl" label="Cards" icon={BsCreditCard2Back}>
+            <Sidebar.Collapse label="Cards" icon={BsCreditCard2Back}>
               {state.cards.map((card) => (
                 <Sidebar.Item>
                   <Link key={card.id} href={`/cards/${card.id}`} scroll={false}>
