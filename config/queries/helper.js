@@ -36,7 +36,9 @@ const getFeaturedCategories = () => {
 };
 const getVendors = () => {
   return db
-    .query("SELECT vendors.*, categories.name as category FROM vendors JOIN categories on category_id=categories.id ORDER BY name ;")
+    .query(
+      "SELECT vendors.*, categories.name as category FROM vendors JOIN categories on category_id=categories.id ORDER BY name ;"
+    )
     .then((data) => data.rows)
     .catch((err) => err.message);
 };
@@ -119,6 +121,28 @@ const getCashbackByID = (id) => {
     .then((data) => data.rows)
     .catch((err) => err.message);
 };
+const searchBanks = (search) => {
+  console.log("The Keyword is ", search);
+
+  return db
+    .query(`SELECT * FROM banks WHERE name LIKE '%${search}%' ORDER BY name`)
+    .then((data) => data.rows)
+    .catch((err) => err.message);
+};
+
+const searchCards = (search) => {
+  return db
+    .query(`SELECT * FROM cards WHERE name LIKE '%${search}%' ORDER BY name`)
+    .then((data) => data.rows)
+    .catch((err) => err.message);
+};
+
+const searchVendors = (search) => {
+  return db
+    .query(`SELECT * FROM vendors WHERE name LIKE '%${search}%' ORDER BY name`)
+    .then((data) => data.rows)
+    .catch((err) => err.message);
+};
 
 module.exports = {
   getBanks,
@@ -136,4 +160,7 @@ module.exports = {
   getCards,
   getListingsByCardID,
   getCardsByBankID,
+  searchBanks,
+  searchCards,
+  searchVendors,
 };
