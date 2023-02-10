@@ -33,16 +33,18 @@ const Bank = ({ cards, cashback }) => {
                 <div className=" grid grid-cols-2">
                   <CardItem card={card} />
                   <div className="col-start-2 col-end-3 ">
-                    <h3 className="text-xl font-bold">{card.name}</h3>
-                    {rewardsArrayByCardId(card.id).map((reward) => (
-                      <div key={reward.name} className="text-sm font-extrabold text-gray-900">
-                        Cashback Rate for {reward.category}: {reward.cashback}%
-                      </div>
-                    ))}
+                    <h3 className="text-xl font-bold text-gray-700">{card.name}</h3>
                     <div className="text-sm text-gray-700">Annual Fee: ${card.annual_fee}</div>
-                    <div className="text-sm text-gray-500">
+                    <div className="text-sm text-gray-700">
                       Interest Rate: {card.interest_rate}%
                     </div>
+                    <div className="text-sm font-extrabold text-gray-900">
+                        Cashback Rate for </div>
+                    {rewardsArrayByCardId(card.id).map((reward) => (
+                      <div key={reward.name} className="text-sm font-extrabold text-gray-900">
+                         {reward.category}: {reward.cashback}%
+                      </div>
+                    ))}
                   </div>
                 </div>
               </Link>
@@ -50,8 +52,8 @@ const Bank = ({ cards, cashback }) => {
           ))}
         </div>
       </section>
-    )
-  );
+    ) 
+  ) ;
 };
 export default Bank;
 

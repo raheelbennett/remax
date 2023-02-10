@@ -35,16 +35,18 @@ INSERT INTO users (name, email, password)
 VALUES
 ('John Doe', 'test@remax.com', 'password');
 
-INSERT INTO cards (name, interest_rate, annual_fee, bank_id, featured, img_url)
+INSERT INTO cards (name, interest_rate, annual_fee, bank_id, featured, img_url, link)
 VALUES
-('BMO World Elite Mastercard',20.99, 120, 9, true, 'bmo-cash-back-world-elite.webp'),
-('Rogers World Elite Mastercard',19.99,0.00,7, true, 'rogers-world-elite.png' ),
-('AMEX SimplyCash Preferred Card', 20.99, 119.88, 2, true, 'amex-simplycash-preferred.png'),
-('Tangerine World Mastercard',19.95,0.00,3, true, 'tangerine-world.png'),
-('Amazon.ca Rewards Mastercard',19.99, 0.00,8, true, 'amazon-rewards.png'),
-('AMEX Air Miles Platinum Card', 20.99, 119.88, 2, true, 'amex-air-miles-platinum.png'),
-('RBC Avion Infinite VISA', 19.99, 119.88, 5, true, 'rbc-avion-infinite.png'),
-('AMEX Green Card', 20.99, 0.00, 2, true, 'amex-green.png');
+('BMO World Elite Mastercard',20.99, 120, 9, true, 'bmo-cash-back-world-elite.webp', 'https://www.bmo.com/main/personal/credit-cards/bmo-cashback-world-elite-mastercard/'),
+('Rogers World Elite Mastercard',19.99,0.00,7, true, 'rogers-world-elite.png' , 'https://rogersbank.com/en/rogers_worldelite_mastercard_details'),
+('AMEX SimplyCash Preferred Card', 20.99, 119.88, 2, true, 'amex-simplycash-preferred.png', 'https://www.americanexpress.com/ca/en/credit-cards/simply-cash-preferred/'),
+('Tangerine World Mastercard',19.95,0.00,3, true, 'tangerine-world.png', 'https://www.tangerine.ca/en/products/spending/creditcard/world'),
+('Amazon.ca Rewards Mastercard',19.99, 0.00,8, true, 'amazon-rewards.png', 'https://www.amazon.ca/MBNA-Amazon-ca-Rewards-Mastercard/dp/B07MJM4F44'),
+('AMEX Air Miles Platinum Card', 20.99, 119.88, 2, true, 'amex-air-miles-platinum.png', 'https://www.americanexpress.com/ca/en/credit-cards/air-miles-platinum-credit-card/'),
+('RBC Avion Infinite VISA', 19.99, 119.88, 5, true, 'rbc-avion-infinite.png', 'https://www.rbcroyalbank.com/credit-cards/travel/rbc-avion-visa-infinite.html'),
+('AMEX Green Card', 20.99, 0.00, 2, true, 'amex-green.png', 'https://www.americanexpress.com/ca/en/credit-cards/green-card/');
+
+
 
 INSERT INTO rewards (reward_rate, card_id,category_id)
 VALUES
