@@ -2,7 +2,6 @@ import Link from "next/link";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Sidebar } from "flowbite-react";
-import { useRouter } from "next/router";
 import {
   MdMovieFilter,
   MdLocalGroceryStore,
@@ -14,21 +13,25 @@ import {
   MdWeekend,
   MdLocalAtm,
   MdLocationCity,
+  MdOutlineLogin,
+  MdPersonAddAlt1,
 } from "react-icons/md";
-import { BsFillCalendarCheckFill } from "react-icons/bs";
+import {
+  BsFillCalendarCheckFill,
+  BsBank2,
+  BsCreditCard2Back,
+  BsInfoSquareFill,
+} from "react-icons/bs";
 import { HiDotsCircleHorizontal } from "react-icons/hi";
-import { BiCategory } from "react-icons/bi";
-
+import { HiBuildingStorefront } from "react-icons/hi2";
+import { BiCategory, BiHome } from "react-icons/bi";
 const SubNav = () => {
-  const router = useRouter();
   const [state, setState] = useState({
     categories: [],
     vendors: [],
     banks: [],
     cards: [],
   });
-
-  const [click, setClick] = useState("");
 
   useEffect(() => {
     Promise.all([
@@ -63,72 +66,58 @@ const SubNav = () => {
   };
 
   return (
-    <div className="w-fit">
-      <Sidebar className="bg-slate-200 ">
-        <Sidebar.Items className="sub-nav p-8 bg-slate-200 rounded md:w-96">
-          <Sidebar.ItemGroup>
-            <Sidebar.Collapse label={"Categories"} icon={BiCategory}>
+    <div className="w-fit font-extrabold	">
+      <Sidebar aria-label="Sidebar with multi-level dropdown" className="bg-slate-200 ">
+        <Sidebar.Items className="sub-nav p-8  bg-slate-200 rounded md:w-80">
+          <Sidebar.ItemGroup className="">
+            <Sidebar.Collapse className=" text-4xl" label="Categories" icon={BiCategory}>
               {state.categories.map((category, index) => (
-                <Link key={category.id} href={`/categories/${category.id}`} scroll={false}>
-                  <Sidebar.Item
-                    className={
-                      router.asPath === `/categories/${category.id}` &&
-                      "text-orange-500 font-black	leading-loose bg-slate-300"
-                    }
-                    icon={CateIcons[category.name]}
-                  >
+                <Sidebar.Item icon={CateIcons[category.name]}>
+                  <Link key={category.id} href={`/categories/${category.id}`} scroll={false}>
                     {category.name}
-                  </Sidebar.Item>
-                </Link>
+                  </Link>
+                </Sidebar.Item>
               ))}
             </Sidebar.Collapse>
-            <Sidebar.Collapse label="Vendors">
+            <Sidebar.Collapse className=" text-4xl" icon={HiBuildingStorefront} label="Vendors">
               {state.vendors.map((vendor) => (
-                <Link key={vendor.id} href={`${vendor.relative_link}`} scroll={false}>
-                  <Sidebar.Item
-                    className={
-                      router.asPath === `${vendor.relative_link}` &&
-                      "text-orange-500 font-black	leading-loose bg-slate-300"
-                    }
-                    icon={CateIcons[vendor.category]}
-                  >
+                <Sidebar.Item icon={CateIcons[vendor.category]}>
+                  <Link key={vendor.id} href={`${vendor.relative_link}`} scroll={false}>
                     {vendor.name}
-                  </Sidebar.Item>
-                </Link>
+                  </Link>
+                </Sidebar.Item>
               ))}
             </Sidebar.Collapse>
-            <Sidebar.Collapse label="Banks">
+            <Sidebar.Collapse className=" text-4xl" label="Banks" icon={BsBank2}>
               {state.banks.map((bank) => (
-                <Link key={bank.id} href={`/bank/${bank.id}`} scroll={false}>
-                  <Sidebar.Item
-                    className={
-                      router.asPath === `/bank/${bank.id}` &&
-                      "text-orange-500 font-black	leading-loose bg-slate-300"
-                    }
-                  >
+                <Sidebar.Item>
+                  <Link key={bank.id} href={`/bank/${bank.id}`} scroll={false}>
                     {bank.name}
-                  </Sidebar.Item>
-                </Link>
+                  </Link>
+                </Sidebar.Item>
               ))}
             </Sidebar.Collapse>
-            <Sidebar.Collapse label="Cards">
+            <Sidebar.Collapse className=" text-4xl" label="Cards" icon={BsCreditCard2Back}>
               {state.cards.map((card) => (
-                <Link key={card.id} href={`/cards/${card.id}`} scroll={false}>
-                  <Sidebar.Item
-                    className={
-                      router.asPath === `/cards/${card.id}` &&
-                      "text-orange-500 font-black	leading-loose w-full bg-slate-300"
-                    }
-                  >
+                <Sidebar.Item>
+                  <Link key={card.id} href={`/cards/${card.id}`} scroll={false}>
                     {card.name}
-                  </Sidebar.Item>
-                </Link>
+                  </Link>
+                </Sidebar.Item>
               ))}
             </Sidebar.Collapse>
-            <Sidebar.Item href="/about">About</Sidebar.Item>
-            <Sidebar.Item href="/signin">Sign In</Sidebar.Item>
-            <Sidebar.Item href="/register">Register</Sidebar.Item>
-            <Sidebar.Item href="/">Home</Sidebar.Item>
+            <Sidebar.Item href="/about" icon={BsInfoSquareFill}>
+              About
+            </Sidebar.Item>
+            <Sidebar.Item href="/signin" icon={MdOutlineLogin}>
+              Sign In
+            </Sidebar.Item>
+            <Sidebar.Item href="/register" icon={MdPersonAddAlt1}>
+              Register
+            </Sidebar.Item>
+            <Sidebar.Item href="/" icon={BiHome}>
+              Home
+            </Sidebar.Item>
           </Sidebar.ItemGroup>
         </Sidebar.Items>
       </Sidebar>
