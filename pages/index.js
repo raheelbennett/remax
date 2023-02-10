@@ -6,7 +6,7 @@ import handleClickScroll from "../components/helper/click_handler";
 
 export default function home({ featured_cards, featured_vendors }) {
   return (
-    <main className="mx-auto">
+    <main className="">
       <section className="border-b-8">
         <h2 className="text-center md:text-3xl md:font-semibold">
           DISCOVER CASHBACK REWARDS WITH YOUR CREDIT CARDS

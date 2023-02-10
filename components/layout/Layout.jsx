@@ -12,8 +12,8 @@ const Layout = ({ children }) => {
         alt="background"
         src={background}
         quality={100}
-        width={1200}
-        className=" mx-auto"
+        // width={1200}
+        className=""
         priority
       />
       <div id="sub-container" className="flex pt-10">
