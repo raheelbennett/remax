@@ -28,8 +28,6 @@ const SubNav = () => {
     cards: [],
   });
 
-  const [click, setClick] = useState("");
-
   useEffect(() => {
     Promise.all([
       axios.get("/api/categories"),
