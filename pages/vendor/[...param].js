@@ -23,12 +23,12 @@ const Vendor = ({ categories, vendor, listings }) => {
       <div className="card-list grid grid-cols-1 gap-10 m-10">
         {/* only if there's listings */}
         {listings.length > 0 && (
-          <div className="p-6 rounded-lg shadow-md" key={main.card_id}>
+          <div className="p-6 rounded-lg shadow-md bg-amber-100 hover:bg-amber-200" key={main.card_id}>
             <Link href={`/cards/${main.card_id}`} scroll={false}>
               <div className=" grid grid-cols-2">
                 <CardItem card={main} />
                 <div className="col-start-2 col-end-3 ">
-                  <h3 className="text-xl font-bold">{main.name}</h3>
+                  <h3 className="text-xl font-bold text-gray-700">{main.name}</h3>
                   <span class="inline-block px-2 py-1 leading-none bg-orange-200 text-orange-800 rounded-full font-semibold uppercase tracking-wide text-xs">
                     Highlight
                   </span>
@@ -36,7 +36,7 @@ const Vendor = ({ categories, vendor, listings }) => {
                     Cashback Rate for {vendor[0].name} Eligible Items: {main.reward_rate}%
                   </div>
                   <div className="text-sm text-gray-700">Annual Fee: ${main.annual_fee}</div>
-                  <div className="text-sm text-gray-500">Interest Rate: {main.interest_rate}%</div>
+                  <div className="text-sm text-gray-700">Interest Rate: {main.interest_rate}%</div>
                 </div>
               </div>
             </Link>
@@ -46,17 +46,17 @@ const Vendor = ({ categories, vendor, listings }) => {
         {categories.map((card) => {
           if (listings.length < 1 || main.card_id !== card.id) {
             return (
-              <div className="p-6 rounded-lg shadow-md" key={card.id}>
+              <div className="p-6 rounded-lg shadow-md hover:bg-slate-100" key={card.id}>
                 <Link href={`/cards/${card.id}`} scroll={false}>
                   <div className="  grid grid-cols-2">
                     <CardItem card={card} />
                     <div className="col-start-2 col-end-3 ">
-                      <h3 className="text-xl font-bold">{card.name}</h3>
+                      <h3 className="text-xl font-bold text-gray-700">{card.name}</h3>
                       <div className="text-sm text-gray-900">
                         Cashback Rate for {card.category}: {card.cashback}%
                       </div>
                       <div className="text-sm text-gray-700">Annual Fee: ${card.annual_fee}</div>
-                      <div className="text-sm text-gray-500">
+                      <div className="text-sm text-gray-700">
                         Interest Rate: {card.interest_rate}%
                       </div>
                     </div>
