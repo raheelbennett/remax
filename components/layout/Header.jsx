@@ -3,6 +3,7 @@ import Image from "next/image";
 import SearchBar from "../SearchBar";
 
 const Header = () => {
+  
   return (
     <div className="relative">
       <header className="flex fixed container mx-auto justify-between bg-white text-black items-center opacity-90">
