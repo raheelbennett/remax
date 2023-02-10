@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { Sidebar } from "flowbite-react";
+import handleClickScroll from "../helper/click_handler";
 import {
   MdMovieFilter,
   MdLocalGroceryStore,
@@ -65,14 +66,6 @@ const SubNav = () => {
     Hotel: MdLocationCity,
     Other: HiDotsCircleHorizontal,
     USD: MdLocalAtm,
-  };
-
-  const handleClickScroll = () => {
-    const element = document.getElementById("sub-container");
-    if (element) {
-      // 👇 Will scroll smoothly to the top of the next section
-      element.scrollIntoView({ behavior: "smooth" });
-    }
   };
 
   return (

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import CardItem from "../components/cards/CardItem";
 import VendorItem from "../components/vendors/VendorItem";
-import CardsList from "../components/cards/CardsList";
 import { getFeaturedCards, getFeaturedVendors } from "@/config/queries/helper";
 
 export default function home({ featured_cards, featured_vendors }) {
@@ -11,7 +10,6 @@ export default function home({ featured_cards, featured_vendors }) {
         <h2 className="text-center md:text-3xl md:font-semibold">
           DISCOVER CASHBACK REWARDS WITH YOUR CREDIT CARDS
         </h2>
-       
 
         <div className="card-list grid grid-cols-2 gap-8 my-10 md:grid-cols-4 ">
           {featured_cards.map((card) => (
