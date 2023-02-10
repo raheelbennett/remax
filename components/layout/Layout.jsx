@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
         className=" mx-auto"
         priority
       />
-      <div className="flex mt-10">
+      <div id="sub-container" className="flex pt-10">
         <SubNav />
         {children}
       </div>
