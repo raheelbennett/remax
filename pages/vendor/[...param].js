@@ -4,7 +4,7 @@ import Link from "next/link";
 import CardItem from "@/components/cards/CardItem";
 import { getCategoriesByID, getVendorsByRL, getListingsByVendor } from "@/config/queries/helper";
 import VendorItem from "@/components/vendors/VendorItem";
-import CardsList from "@/components/cards/CardsList";
+import CardList from "@/components/cards/CardList";
 
 const Vendor = ({ categories, vendor, listings }) => {
   const router = useRouter();
@@ -46,7 +46,7 @@ const Vendor = ({ categories, vendor, listings }) => {
 
       {categories.map((card) => {
           if (listings.length < 1 || main.card_id !== card.id) {
-            return <CardsList cards={[card]}  string="grid grid-cols-2"/>;
+            return <CardList cards={[card]}  string="grid grid-cols-2"/>;
           }
         })}
       </div>

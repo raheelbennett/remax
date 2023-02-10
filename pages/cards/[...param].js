@@ -1,6 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
-import CardsList from "@/components/cards/CardsList";
+import CardList from "@/components/cards/CardList";
 import CardItem from "@/components/cards/CardItem";
 import { getCashbackByID, getListingsByCardID, getCards } from "@/config/queries/helper";
 import Link from "next/link";
@@ -17,7 +17,7 @@ const Cards = ({ cards, vendors, all }) => {
       <section>
         <h2 className="text-xl font-bold mb-4 text-center pt-3.5">All Cards</h2>
         <div className="card-list grid grid-cols-2 gap-10 m-20">
-        <CardsList cards={all}/>
+        <CardList cards={all}/>
         </div>
       </section>
     );

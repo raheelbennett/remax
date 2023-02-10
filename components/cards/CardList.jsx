@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import CardItem from "@/components/cards/CardItem";
 
-const CardsList = ({ cards , string, condition}) => {
+const CardList = ({ cards , string}) => {
   return (
       <>
     {cards.map((card) => (
@@ -28,8 +28,4 @@ const CardsList = ({ cards , string, condition}) => {
   );
 };
 
-export default CardsList;
-
-
-
-
+export default CardList;
