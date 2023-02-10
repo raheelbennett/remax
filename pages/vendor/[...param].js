@@ -4,6 +4,7 @@ import Link from "next/link";
 import CardItem from "@/components/cards/CardItem";
 import { getCategoriesByID, getVendorsByRL, getListingsByVendor } from "@/config/queries/helper";
 import VendorItem from "@/components/vendors/VendorItem";
+import CardsList from "@/components/cards/CardsList";
 
 const Vendor = ({ categories, vendor, listings }) => {
   const router = useRouter();
@@ -43,27 +44,9 @@ const Vendor = ({ categories, vendor, listings }) => {
           </div>
         )}
 
-        {categories.map((card) => {
+      {categories.map((card) => {
           if (listings.length < 1 || main.card_id !== card.id) {
-            return (
-              <div className="p-6 rounded-lg shadow-md hover:bg-slate-100" key={card.id}>
-                <Link href={`/cards/${card.id}`} scroll={false}>
-                  <div className="  grid grid-cols-2">
-                    <CardItem card={card} />
-                    <div className="col-start-2 col-end-3 ">
-                      <h3 className="text-xl font-bold text-gray-700">{card.name}</h3>
-                      <div className="text-sm text-gray-900">
-                        Cashback Rate for {card.category}: {card.cashback}%
-                      </div>
-                      <div className="text-sm text-gray-700">Annual Fee: ${card.annual_fee}</div>
-                      <div className="text-sm text-gray-700">
-                        Interest Rate: {card.interest_rate}%
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            );
+            return <CardsList cards={[card]}  string="grid grid-cols-2"/>;
           }
         })}
       </div>

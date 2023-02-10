@@ -1,24 +1,35 @@
-// import { useEffect, useState } from "react";
-// import axios from "axios";
-// import CardItem from "./CardItem";
+import Link from "next/link";
+import React from "react";
+import CardItem from "@/components/cards/CardItem";
 
-// const CardsList = () => {
-//   const [cards, setCards] = useState([]);
-//   useEffect(() => {
-//     const getCards = async () => {
-//       const { data } = await axios.get("/api/cards");
-//       setCards(data);
-//     };
-//     getCards();
-//   }, []);
+const CardsList = ({ cards , string, condition}) => {
+  return (
+      <>
+    {cards.map((card) => (
+      <div className="p-6 rounded-lg shadow-md hover:bg-slate-100" key={card.id}>
+        <Link href={`/cards/${card.id}`} scroll={false}>
+          <div className={string || "text-center"}>
+            <CardItem card={card} />
+            <div className="col-start-2 col-end-3 ">
+              <h3 className="text-xl font-bold text-gray-700">{card.name}</h3>
+              {card.cashback &&  <div className="text-sm text-gray-900">
+                Cashback Rate for {card.category}: {card.cashback}%
+              </div>}
+             
+              <div className="text-sm text-gray-700">Annual Fee: ${card.annual_fee}</div>
+              <div className="text-sm text-gray-700">Interest Rate: {card.interest_rate}%</div>
+            </div>
+          </div>
+        </Link>
+      </div>
+    ))}
+    </>
 
-//   return (
-//     <div className="grid grid-cols-4 gap-40">
-//       {cards.map((card) => (
-//         <CardItem key={card.id} card={card} />
-//       ))}
-//     </div>
-//   );
-// };
+  );
+};
 
-// export default CardsList;
+export default CardsList;
+
+
+
+
