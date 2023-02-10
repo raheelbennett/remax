@@ -2,6 +2,7 @@ import Link from "next/link";
 import CardItem from "../components/cards/CardItem";
 import VendorItem from "../components/vendors/VendorItem";
 import { getFeaturedCards, getFeaturedVendors } from "@/config/queries/helper";
+import handleClickScroll from "../components/helper/click_handler";
 
 export default function home({ featured_cards, featured_vendors }) {
   return (
@@ -13,7 +14,13 @@ export default function home({ featured_cards, featured_vendors }) {
 
         <div className="card-list grid grid-cols-2 gap-8 my-10 md:grid-cols-4 ">
           {featured_cards.map((card) => (
-            <Link scroll={false} href={`/cards/${card.id}`} key={card.id} className="w-fit m-4">
+            <Link
+              scroll={false}
+              href={`/cards/${card.id}`}
+              key={card.id}
+              className="w-fit m-4"
+              onClick={handleClickScroll}
+            >
               <CardItem card={card} />
             </Link>
           ))}
@@ -25,7 +32,13 @@ export default function home({ featured_cards, featured_vendors }) {
         </h2>
         <div className="vendor-list grid grid-cols-2 gap-8 place-items-center md:grid-cols-4">
           {featured_vendors.map((vendor) => (
-            <Link href={vendor.relative_link} scroll={false} key={vendor.id} className="w-fit m-4">
+            <Link
+              href={vendor.relative_link}
+              scroll={false}
+              key={vendor.id}
+              className="w-fit m-4"
+              onClick={handleClickScroll}
+            >
               <VendorItem vendor={vendor} />
             </Link>
           ))}
