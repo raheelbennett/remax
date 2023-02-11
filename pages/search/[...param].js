@@ -1,5 +1,5 @@
 // import { useRouter } from "next/router";
-import { searchBanks, searchCards, searchVendors } from "@/config/queries/helper";
+import { searchBanks, searchCards, searchVendors } from "@/config/queries/search";
 
 export default function SearchResults({ banks, cards, vendors }) {
   console.log("search results banks", banks);
@@ -7,7 +7,8 @@ export default function SearchResults({ banks, cards, vendors }) {
   console.log("search results vendors", vendors);
 
   return (
-    <div className="my-10">
+    <div className="">
+      <h2 className="text-2xl font-bold m-8">Search Results</h2>
       <h2 className="text-2xl font-bold m-8">Banks </h2>
       {banks.map((bank) => (
         <div key={bank.id} className="my-2">
