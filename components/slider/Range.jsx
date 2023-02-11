@@ -3,6 +3,9 @@ import { Slider, Row, Col, InputNumber } from 'rsuite';
 import 'rsuite/dist/rsuite.min.css';
 
 
+const styles = {
+    '--rs-slider-progress': '#409c72'
+  }
 const Range = ({category, cashback}) => {
   const [value, setValue] = useState(0);
   const savings = value * (cashback/100);
@@ -12,10 +15,10 @@ const formattedSavings =  `$${savings.toFixed(2)}`;
       <Col md={15}>
       <label>{category} ({cashback}% cash back)</label> 
       <br/>
-        {formattedSavings} Saving
+        <div className='font-bold'>{formattedSavings} Saving</div>
         <Slider
           progress
-          style={{ marginTop: 16 }}
+          style={styles}
           value={value}
           onChange={value => {
             setValue(value);

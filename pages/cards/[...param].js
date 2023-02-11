@@ -11,6 +11,7 @@ const Cards = ({ cards, vendors, all }) => {
   const router = useRouter();
   const { param } = router.query;
   const card = cards[0]
+  
 
   if (param[0] === "all") {
     return (
@@ -29,7 +30,7 @@ const Cards = ({ cards, vendors, all }) => {
     <section>
       <div className="card-list grid grid-cols-1 gap-10 m-10">
 
-        <div className="p-8 rounded-lg shadow-md ">
+        <div className="p-8 rounded-lg shadow-lg ">
           <h2 className="p-2 lg:px-3 mx-2 text-xl font-bold text-center mb-4 text-gray-700">
             <Link href={card.link}>
  
