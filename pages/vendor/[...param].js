@@ -9,11 +9,9 @@ import CardList from "@/components/cards/CardList";
 const Vendor = ({ categories, vendor, listings }) => {
   const router = useRouter();
   const { param } = router.query;
-  if (param === "all") {
-    return <div>All</div>;
-  }
+
   const main = listings[0];
-  console.log(listings);
+
   return (
     <section>
       <VendorItem vendor={vendor[0]} />

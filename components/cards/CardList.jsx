@@ -7,7 +7,7 @@ const CardList = ({ cards, string }) => {
   return (
     <>
       {cards.map((card) => (
-        <div className="p-6 rounded-lg shadow-md hover:bg-slate-100" key={card.id}>
+        <div className="p-6 rounded-lg shadow-md hover:bg-slate-100 hover:drop-shadow-xl" key={card.id}>
           <Link href={`/cards/${card.id}`} scroll={false} onClick={handleClickScroll}>
             <div className={string || "text-center"}>
               <CardItem card={card} />
