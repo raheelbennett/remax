@@ -40,7 +40,6 @@ export default function SearchResults({ banks, cards, vendors }) {
   return (
     <div className="">
       <h2 className="text-3xl font-bold m-8">Search Results</h2>
-      {(filter === "All" || filter === "Banks") && <p> it worked </p>}
 
       {cardResults()}
       {vendorResults()}

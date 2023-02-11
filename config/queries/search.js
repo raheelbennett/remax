@@ -1,8 +1,6 @@
 const db = require("../db.js");
 
 const searchBanks = (search) => {
-  console.log("The Keyword is ", search);
-
   return db
     .query(`SELECT * FROM banks WHERE name ILIKE '%${search}%' ORDER BY name`)
     .then((data) => data.rows)

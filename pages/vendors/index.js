@@ -17,7 +17,6 @@ export default Vendors;
 
 export async function getServerSideProps({ query }) {
   const vendors = await getVendors();
-  console.log(vendors);
 
   return { props: { vendors } };
 }
