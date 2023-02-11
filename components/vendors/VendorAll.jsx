@@ -9,7 +9,7 @@ const VendorAll = ({ vendors }) => {
     <>
     {vendors.map((vendor) => (
       <div className="p-4 rounded-lg shadow-lg hover:bg-slate-100 hover:drop-shadow-xl flex flex-wrap flex-col content-around justify-around" key={vendor.id}>
-      <Link href={`/vendors/${vendor.id}`} scroll={false} onClick={handleClickScroll}>
+      <Link href={`${vendor.relative_link}`} scroll={false} onClick={handleClickScroll}>
         <div className="text-center">
         <Image
               alt={vendor.name}
