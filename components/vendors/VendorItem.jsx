@@ -7,7 +7,7 @@ const VendorItem = ({ vendor }) => {
       <Image
         alt={vendor.name}
         src={`/assets/img/vendor/${vendor.img_url}`}
-        className="mx-auto"
+        className="mx-auto pt-6"
         width={200}
         height={200}
       />

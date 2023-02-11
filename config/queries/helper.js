@@ -122,8 +122,6 @@ const getCashbackByID = (id) => {
     .catch((err) => err.message);
 };
 const searchBanks = (search) => {
-  console.log("The Keyword is ", search);
-
   return db
     .query(`SELECT * FROM banks WHERE name LIKE '%${search}%' ORDER BY name`)
     .then((data) => data.rows)
