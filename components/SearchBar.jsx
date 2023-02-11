@@ -26,7 +26,7 @@ const SearchBar = () => {
   const handleSearchSubmit = async (e) => {
     e.preventDefault();
     handleClickScroll();
-    router.push(`/search/${searchKeyword}`, null, { scroll: false });
+    router.push(`/search/${filter}?keyword=${searchKeyword}`, null, { scroll: false });
   };
 
   return (

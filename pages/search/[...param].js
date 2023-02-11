@@ -1,14 +1,17 @@
-// import { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { searchBanks, searchCards, searchVendors } from "@/config/queries/search";
 
 export default function SearchResults({ banks, cards, vendors }) {
+  const router = useRouter();
+  const filter = router.query.param[0];
+  console.log("🚀 ~ file: [...param].js:7 ~ SearchResults ~ rquery", filter);
   console.log("search results banks", banks);
   console.log("search results cards", cards);
   console.log("search results vendors", vendors);
 
   return (
     <div className="">
-      <h2 className="text-2xl font-bold m-8">Search Results</h2>
+      <h2 className="text-2xl font-bold m-5">Search Results</h2>
       <h2 className="text-2xl font-bold m-8">Banks </h2>
       {banks.map((bank) => (
         <div key={bank.id} className="my-2">
