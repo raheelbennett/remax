@@ -11,12 +11,16 @@ const Cards = ({ cards, vendors, all }) => {
   const router = useRouter();
   const { param } = router.query;
   const card = cards[0]
+  
 
   if (param[0] === "all") {
     return (
-      <section>
-        <h2 className="text-xl font-bold mb-4 text-center pt-3.5">All Cards</h2>
-        <div className="card-list grid grid-cols-2 gap-10 m-20">
+
+      <section className="border-b-8">
+        <h2 className="text-center text-3xl font-semibold">
+          ALL AVAILABLE CREDIT CARDS
+        </h2>
+        <div className="card-list grid grid-cols-2 gap-8 my-10 md:grid-cols-4">
         <CardList cards={all}/>
         </div>
       </section>
@@ -26,10 +30,10 @@ const Cards = ({ cards, vendors, all }) => {
     <section>
       <div className="card-list grid grid-cols-1 gap-10 m-10">
 
-        <div className="p-8 rounded-lg shadow-md ">
+        <div className="p-8 rounded-lg shadow-lg ">
           <h2 className="p-2 lg:px-3 mx-2 text-xl font-bold text-center mb-4 text-gray-700">
             <Link href={card.link}>
-            {/* will put cards link instead of google placeholder */}
+ 
           <BsInfoCircle className="text-gray-700 hover:text-orange-400 " size="1.25em" /> 
 
           </Link>

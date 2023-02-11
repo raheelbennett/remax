@@ -1,5 +1,13 @@
 import { useRouter } from "next/router";
 import { searchBanks, searchCards, searchVendors } from "@/config/queries/search";
+import CardList from "@/components/cards/CardList";
+import Link from "next/link";
+import handleClickScroll from "@/components/helper/click_handler";
+import VendorAll from "@/components/vendors/VendorAll";
+
+
+
+
 
 export default function SearchResults({ banks, cards, vendors }) {
   const router = useRouter();
@@ -13,30 +21,47 @@ export default function SearchResults({ banks, cards, vendors }) {
     <div className="">
       <h2 className="text-2xl font-bold m-5">Search Results</h2>
       <h2 className="text-2xl font-bold m-8">Banks </h2>
+      { banks.length < 1 && <div className="mx-20" >No results</div>   }
+      
+      {banks.length > 0 &&  
+      <div className="card-list grid grid-cols-3 gap-4 mx-20">
       {banks.map((bank) => (
-        <div key={bank.id} className="my-2">
-          {bank.name}
-        </div>
-      ))}
+          <div className="p-4 rounded-lg shadow-md hover:bg-slate-100 hover:drop-shadow-xl justify-around" key={bank.id}>
+            <Link
+                  key={bank.id}
+                  href={`/bank/${bank.id}`}
+                  scroll={false}
+                  onClick={handleClickScroll}
+                >
+            <div className="text-center">
+              <h3 className="text-xl font-bold text-gray-700">{bank.name}</h3>
+            </div>
+            </Link>
+          </div>
+        ))}
+      </div> }
+
       <h2 className="text-2xl font-bold m-8">Cards</h2>
-      {cards.map((card) => (
-        <li key={card.id} className="my-2">
-          {card.name}
-        </li>
-      ))}
+      { cards.length < 1 && <div className="mx-20">No results</div>   }
+
+ { cards.length > 0 &&    
+  <div className="card-list grid grid-cols-3 gap-4 mx-20">
+    <CardList cards={cards}/>
+    </div>}
+
       <h2 className="text-2xl font-bold m-8">Vendors</h2>
-      {vendors.map((vendor) => (
-        <li key={vendor.id} className="my-2">
-          {vendor.name}
-        </li>
-      ))}
+      { vendors.length < 1 && <div className="mx-20">No results</div>   }
+
+      { vendors.length > 0 &&    
+      <div className="card-list grid grid-cols-4 gap-4 mx-20">
+      <VendorAll vendors={vendors}/>
+      </div>}
+    
     </div>
   );
 }
 
 export async function getServerSideProps({ query }) {
-  // const router = useRouter();
-  console.log("query params", query);
 
   const banks = await searchBanks(query.param[0]);
   const cards = await searchCards(query.param[0]);

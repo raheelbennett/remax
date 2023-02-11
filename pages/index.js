@@ -25,8 +25,11 @@ export default function home({ featured_cards, featured_vendors }) {
             </Link>
           ))}
         </div>
+        <Link href="/cards/all">
+            <p className="text-base font-medium text-right italic">View All Cards</p>
+          </Link>
       </section>
-      <section>
+      <section className="border-b-8">
         <h2 className="mt-20 text-center italic md:text-2xl">
           ENJOY MOVIES, TRAVEL, SHOPPING, DINING, GROCERIES, AND MORE
         </h2>
@@ -43,6 +46,9 @@ export default function home({ featured_cards, featured_vendors }) {
             </Link>
           ))}
         </div>
+        <Link href="/vendors">
+            <p className="text-base font-medium text-right italic">View All Vendors</p>
+          </Link>
       </section>
     </main>
   );
