@@ -22,7 +22,10 @@ const Vendor = ({ categories, vendor, listings }) => {
       <div className="card-list grid grid-cols-1 gap-10 m-10">
         {/* only if there's listings */}
         {listings.length > 0 && (
-          <div className="p-6 rounded-lg shadow-md bg-amber-100 hover:bg-amber-200" key={main.card_id}>
+          <div
+            className="p-6 rounded-lg shadow-md bg-amber-100 hover:bg-amber-200"
+            key={main.card_id}
+          >
             <Link href={`/cards/${main.card_id}`} scroll={false}>
               <div className=" grid grid-cols-2">
                 <CardItem card={main} />
@@ -42,9 +45,9 @@ const Vendor = ({ categories, vendor, listings }) => {
           </div>
         )}
 
-      {categories.map((card) => {
+        {categories.map((card) => {
           if (listings.length < 1 || main.card_id !== card.id) {
-            return <CardList cards={[card]}  string="grid grid-cols-2"/>;
+            return <CardList key={card.id} cards={[card]} string="grid grid-cols-2" />;
           }
         })}
       </div>

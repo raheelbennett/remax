@@ -1,23 +1,8 @@
 import { Dropdown } from "flowbite-react";
 import { useState } from "react";
-import axios from "axios";
 import { useRouter } from "next/router";
 import handleClickScroll from "./helper/click_handler";
 
-// const SearchVendorResult = ({ searchData }) => {
-//   return (
-//     <div className="my-10">
-//       <h3 className="text-lg font-bold">Vendors</h3>
-//       <ul>
-//         {searchData.map((vendor) => (
-//           <li key={vendor.id} className="my-2">
-//             {vendor.name}
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// };
 const SearchBar = () => {
   const router = useRouter();
   const [searchKeyword, setSearchKeyword] = useState("");
