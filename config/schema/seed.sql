@@ -46,7 +46,39 @@ VALUES
 ('RBC Avion Infinite VISA', 19.99, 119.88, 5, true, 'rbc-avion-infinite.png', 'https://www.rbcroyalbank.com/credit-cards/travel/rbc-avion-visa-infinite.html'),
 ('AMEX Green Card', 20.99, 0.00, 2, true, 'amex-green.png', 'https://www.americanexpress.com/ca/en/credit-cards/green-card/');
 
+INSERT INTO cards (name, interest_rate, annual_fee, bank_id, featured, img_url, link)
+VALUES
+('Triangle Mastercard',19.99,0.00,12,false,'Triangle_Mastercard_Mobile.avif','https://www.ctfs.com/content/ctfs/en/credit_cards.html'),
+('AMEX Platinum Card', 20.99,699.00, 2,false, 'amex-platinum.webp', 'https://www.americanexpress.com/ca/en/charge-cards/the-platinum-card/'  ),
+('TD Cash Back Visa Card', 19.99,0.00, 10, false,'td-cash-back-entry.jpeg', 'https://www.td.com/ca/en/personal-banking/products/credit-cards/cash-back/cash-back-visa-card' ),
+('TD Infinite Cash Back Visa Card', 20.99,139.00, 10, false,'td-cash-back-infinite-visa.jpeg', 'https://www.td.com/ca/en/personal-banking/products/credit-cards/cash-back/cash-back-visa-infinite-card' ),
+('Walmart Rewards Capital One Card', 20.99,0.00, 1, false,'walmart.png', 'https://www.walmart.com/cp/walmart-credit-card/632402' );
 
+
+
+INSERT INTO listings(reward_rate, vendor , card_id)
+VALUES
+( 4,11,9),
+( 5 ,18,13);
+
+
+INSERT INTO rewards (reward_rate, card_id,category_id)
+VALUES
+(1.5,9,1),
+(0.5,9,11),
+(3,10,5),
+(2,10,7),
+(1,10,11),
+(1,11,2),
+(1,11,1),
+(1,11,9),
+(0.5,11,11),
+(1,12,11),
+(3,12,1),
+(3,12,2),
+(3,12,9),
+(2,13,5),
+(1,13,11);
 
 INSERT INTO rewards (reward_rate, card_id,category_id)
 VALUES
@@ -93,26 +125,16 @@ VALUES
 ('Moxies', 5, true, 'moxies.jpeg', '/vendor/moxies'),
 ('Boston Pizza', 5, true, 'boston-pizza.png', '/vendor/boston-pizza'),
 ('Netflix', 8, true, 'netflix.png', '/vendor/netflix'),
-('Disney Plus', 8, true, 'disney-plus.jpeg', '/vendor/disney-plus');
--- ('No Frills', 1, false),
+('Disney Plus', 8, true, 'disney-plus.jpeg', '/vendor/disney-plus'),
+('Canadian Tire', 6, false,'ct.png','/vendor/canadian-tire' ),
+('No Frills', 1, false,'no-frills.jpeg', '/vendor/no-frills' ),
+('Burger king', 1, true, 'burger-king.png' ,'/vendor/burger-king'),
+('Starbucks', 8, false, 'starbucks.jpeg' ,'/vendor/starbucks'),
+('Petro-Canada', 9, true, 'petro-canada.png' ,'/vendor/petro'),
+('Shell', 9, false, 'shell.png' ,'/vendor/shell'),
+('Esso', 9, false, 'esso.png' ,'/vendor/esso'),
+('Walmart', 9, false, 'walmart.jpeg' ,'/vendor/walmart');
 
--- ('Whole Foods', 1, true),
--- ('Metro', 1, true),
--- ('IGA', 1, true),
--- ('Food Basics', 1, false),
-
--- ('Crave TV', 8, false),
--- ('YouTube Premium', 8, false),
--- ('Spotify', 8, true),
--- ('Apple Music', 8, false),
--- ('Petro-Canada', 9, true),
--- ('Shell', 9, false),
--- ('Esso', 9, false),
--- ('Pioneer', 9, false),
--- ('Husky', 9, false),
--- ('Ultramar', 9, false),
--- ('Mobil', 9, false),
--- ('Ebay', 11, false); will add img_url and relative link later
 
 INSERT INTO card_user(card_id,user_id)
 VALUES

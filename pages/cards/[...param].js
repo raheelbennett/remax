@@ -2,7 +2,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import CardList from "@/components/cards/CardList";
 import CardItem from "@/components/cards/CardItem";
-import { getCashbackByID, getListingsByCardID, getCards } from "@/config/queries/helper";
+import { getCashback, getListingsByCardID, getCards } from "@/config/queries/helper";
 import Link from "next/link";
 import Range from "@/components/slider/Range";
 import {BsInfoCircle} from 'react-icons/bs'
@@ -25,6 +25,7 @@ const Cards = ({ cards, vendors, all }) => {
   return (
     <section>
       <div className="card-list grid grid-cols-1 gap-10 m-10">
+
         <div className="p-8 rounded-lg shadow-md ">
           <h2 className="p-2 lg:px-3 mx-2 text-xl font-bold text-center mb-4 text-gray-700">
             <Link href={card.link}>
@@ -70,7 +71,7 @@ const Cards = ({ cards, vendors, all }) => {
 };
 
 export async function getServerSideProps({ query }) {
-  const cards = await getCashbackByID(query.param[0]);
+  const cards = await getCashback(query.param[0]);
   const all = await getCards();
   const vendors = await getListingsByCardID(query.param[0]);
   return { props: { cards, vendors, all } };

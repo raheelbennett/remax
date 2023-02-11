@@ -98,14 +98,14 @@ const getCardsByBankID = (id) => {
     .then((data) => data.rows)
     .catch((err) => err.message);
 };
-// const getAllCashback = () => {
-//   return db
-//     .query(
-//       "SELECT categories.name as category, reward_rate as Cashback, cards.name as cards, cards.interest_rate as interest, cards.annual_fee as annual_fee from rewards JOIN categories on category_id=categories.id JOIN cards on card_id=cards.id ORDER BY Cashback DESC;"
-//     )
-//     .then((data) => data.rows)
-//     .catch((err) => err.message);
-// };
+const getCashback = (id) => {
+  return db
+    .query(
+      "SELECT categories.name as category, reward_rate as Cashback, cards.* from rewards JOIN categories on category_id=categories.id JOIN cards on card_id=cards.id WHERE card_id = $1 GROUP BY categories.name, rewards.reward_rate, cards.id ORDER BY Cashback DESC;",[id]
+    )
+    .then((data) => data.rows)
+    .catch((err) => err.message);
+};
 const getCashbackByID = (id) => {
   let cardIds = "(";
   for (let i = 0; i < id.length; i++) {
@@ -149,7 +149,7 @@ module.exports = {
   // getCategoriesByCardID,
   getCategoriesByID,
   getListingsByVendor,
-  // getAllCashback,
+  getCashback,
   getCashbackByID,
   getCategories,
   getFeaturedCategories,
