@@ -53,7 +53,7 @@ export default function SearchResults({ banks, cards, vendors }) {
 
   return (
     <div className="">
-      <h1 className="text-3xl font-bold m-4">Search Results</h1>
+      <h1 className="text-3xl font-bold m-5">Search Results</h1>
 
       {cardResults()}
       {vendorResults()}
