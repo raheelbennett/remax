@@ -4,6 +4,7 @@ import CardList from "@/components/cards/CardList";
 import Link from "next/link";
 import handleClickScroll from "@/components/helper/click_handler";
 import VendorList from "@/components/vendors/VendorList";
+import BankList from "@/components/banks/BankList";
 
 export default function SearchResults({ banks, cards, vendors }) {
   const router = useRouter();
@@ -36,13 +37,27 @@ export default function SearchResults({ banks, cards, vendors }) {
       );
     }
   };
+  const bankResults = () => {
+    if (filter === "All" || filter === "Banks") {
+      return (
+        <section>
+          <h2 className="text-2xl font-bold m-8">Banks</h2>
+          <h3 className="m-8">Found {banks.length} result(s)</h3>
+          <div className="card-list grid grid-cols-4 gap-4 mx-20">
+            <BankList banks={banks} />
+          </div>
+        </section>
+      );
+    }
+  };
 
   return (
     <div className="">
-      <h2 className="text-3xl font-bold m-8">Search Results</h2>
+      <h1 className="text-3xl font-bold m-4">Search Results</h1>
 
       {cardResults()}
       {vendorResults()}
+      {bankResults()}
     </div>
   );
 }

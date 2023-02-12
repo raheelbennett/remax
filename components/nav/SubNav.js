@@ -71,7 +71,7 @@ const SubNav = () => {
   return (
     <div>
       <Sidebar className="bg-slate-200 ">
-        <Sidebar.Items className="sub-nav p-8 bg-slate-200 rounded md:w-fit">
+        <Sidebar.Items className="sub-nav p-8 mr-16 bg-slate-200 rounded md:w-fit">
           <Sidebar.ItemGroup className="w-80">
             <Sidebar.Collapse label={"Categories"} icon={BiCategory}>
               {state.categories.map((category, index) => (
