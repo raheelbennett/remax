@@ -17,7 +17,7 @@ const Cards = ({ cards, vendors, all }) => {
     return (
 
       <section className="border-b-8">
-        <h2 className="text-center text-3xl font-semibold m-10">
+        <h2 className="text-center text-3xl font-semibold m-10 dark:text-gray-300">
           ALL AVAILABLE CREDIT CARDS
         </h2>
         <div className="card-list grid grid-cols-2 gap-8 my-10 md:grid-cols-4">
@@ -30,8 +30,8 @@ const Cards = ({ cards, vendors, all }) => {
     <section>
       <div className="card-list grid grid-cols-1 gap-10 m-10">
 
-        <div className="p-8 rounded-lg shadow-lg ">
-          <h2 className="p-2 lg:px-3 mx-2 text-xl font-bold text-center mb-4 text-gray-700">
+        <div className="p-8 rounded-lg shadow-lg dark:shadow-blue-400/40 dark:bg-gray-400 ">
+          <h2 className="p-2 lg:px-3 mx-2 text-xl font-bold text-center mb-4 text-gray-700 dark:text-gray-800">
             <Link href={card.link}>
  
           <BsInfoCircle className="text-gray-700 hover:text-orange-400 " size="1.25em" /> 
@@ -41,12 +41,12 @@ const Cards = ({ cards, vendors, all }) => {
           </h2>
           <CardItem card={card} />
           <br/>
-          <div className="text-sm text-gray-700 text-center">
+          <div className="text-sm text-gray-700 text-center dark:text-gray-800">
             Annual Fee: ${card.annual_fee} </div>
-          <div className="text-sm text-gray-700 text-center">
+          <div className="text-sm text-gray-700 text-center dark:text-gray-800">
             Interest Rate: {card.interest_rate}% </div>
           <br/>
-          <div className="font-xl text-2xl align-middle px-3 text-center mb-2"> Cashback Rates</div>
+          <div className="font-xl text-2xl align-middle px-3 text-center mb-2 dark:text-gray-800"> Cashback Rates</div>
           <br/>
           <div className="grid grid-cols-1 gap-4 text-center">
 
