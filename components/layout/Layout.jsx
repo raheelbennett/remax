@@ -8,7 +8,9 @@ import background from "../../public/assets/img/background.png";
 const Layout = ({ children }) => {
   const router = useRouter();
   return (
-    <div className="dark:bg-gray-800"> {/* this is main section beside the nav  */}
+    <div className="dark:bg-gray-800">
+      {" "}
+      {/* this is main section beside the nav  */}
       <Header />
       {router.pathname === "/" ? (
         <Image
@@ -16,12 +18,11 @@ const Layout = ({ children }) => {
           src={background}
           quality={100}
           // width={1200}
-          className=""
+          className="-mb-20"
           priority
         />
       ) : null}
-
-      <div id="sub-container" className="flex pt-10">
+      <div id="sub-container" className="flex pt-36 md:pt-20">
         <SubNav />
         {children}
       </div>
