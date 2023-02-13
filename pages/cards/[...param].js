@@ -17,7 +17,7 @@ const Cards = ({ cards, vendors, all }) => {
     return (
 
       <section className="border-b-8">
-        <h2 className="text-center text-3xl font-semibold">
+        <h2 className="text-center text-3xl font-semibold m-10">
           ALL AVAILABLE CREDIT CARDS
         </h2>
         <div className="card-list grid grid-cols-2 gap-8 my-10 md:grid-cols-4">

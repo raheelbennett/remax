@@ -5,7 +5,7 @@ import SearchBar from "../SearchBar";
 const Header = () => {
   return (
     <div className="">
-      <header className="flex flex-col sm:flex-row first:fixed container justify-between bg-white text-black items-center opacity-90">
+      <header className=" dark:bg-gray-900 flex flex-col sm:flex-row first:fixed container justify-between bg-white text-black items-center opacity-90">
 
         <h1 className="logo">
           <Link href="/">
