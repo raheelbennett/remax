@@ -1,21 +1,16 @@
 import Image from "next/image";
 import React from "react";
-import handleClickScroll from "@/components/helper/click_handler";
 import Link from "next/link";
 
 const BankList = ({ banks }) => {
   return (
     <>
       {banks.map((bank) => (
-
-
-
         <div
           className="p-4 rounded-lg shadow-lg hover:bg-slate-100 hover:drop-shadow-xl flex flex-wrap flex-col content-around justify-around"
           key={bank.id}
-
         >
-          <Link href={`/bank/${bank.id}`} scroll={false} onClick={handleClickScroll}>
+          <Link href={`/bank/${bank.id}`}>
             <div className="text-center">
               <Image
                 alt={bank.name}

@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import { searchBanks, searchCards, searchVendors } from "@/config/queries/search";
 import CardList from "@/components/cards/CardList";
 import Link from "next/link";
-import handleClickScroll from "@/components/helper/click_handler";
 import VendorList from "@/components/vendors/VendorList";
 import BankList from "@/components/banks/BankList";
 
@@ -16,7 +15,11 @@ export default function SearchResults({ banks, cards, vendors }) {
       return (
         <section>
           <h2 className="text-2xl font-bold m-8">Cards</h2>
-          {cards.length == 1 ? <h3 className="m-8">Found {cards.length} result</h3>: <h3 className="m-8">Found {cards.length} results</h3>}
+          {cards.length == 1 ? (
+            <h3 className="m-8">Found {cards.length} result</h3>
+          ) : (
+            <h3 className="m-8">Found {cards.length} results</h3>
+          )}
           <div className="card-list grid grid-cols-3 gap-4 mx-20">
             <CardList cards={cards} />
           </div>
@@ -29,7 +32,11 @@ export default function SearchResults({ banks, cards, vendors }) {
       return (
         <section>
           <h2 className="text-2xl font-bold m-8">Vendors</h2>
-          {vendors.length == 1 ? <h3 className="m-8">Found {vendors.length} result</h3>: <h3 className="m-8">Found {vendors.length} results</h3>}
+          {vendors.length == 1 ? (
+            <h3 className="m-8">Found {vendors.length} result</h3>
+          ) : (
+            <h3 className="m-8">Found {vendors.length} results</h3>
+          )}
           <div className="card-list grid grid-cols-4 gap-4 mx-20">
             <VendorList vendors={vendors} />
           </div>
@@ -42,7 +49,11 @@ export default function SearchResults({ banks, cards, vendors }) {
       return (
         <section>
           <h2 className="text-2xl font-bold m-8">Banks</h2>
-          {banks.length == 1 ? <h3 className="m-8">Found {banks.length} result</h3>: <h3 className="m-8">Found {banks.length} results</h3>}
+          {banks.length == 1 ? (
+            <h3 className="m-8">Found {banks.length} result</h3>
+          ) : (
+            <h3 className="m-8">Found {banks.length} results</h3>
+          )}
           <div className="card-list grid grid-cols-4 gap-4 mx-20">
             <BankList banks={banks} />
           </div>

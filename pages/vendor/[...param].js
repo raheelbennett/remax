@@ -26,7 +26,7 @@ const Vendor = ({ categories, vendor, listings }) => {
             className="p-6 rounded-lg shadow-md bg-amber-100 hover:bg-amber-200 dark:shadow-green-500/40 dark:bg-green-600 dark:hover:bg-green-500"
             key={main.card_id}
           >
-            <Link href={`/cards/${main.card_id}`} scroll={false}>
+            <Link href={`/cards/${main.card_id}`}>
               <div className=" grid grid-cols-2">
                 <CardItem card={main} />
                 <div className="col-start-2 col-end-3 ">

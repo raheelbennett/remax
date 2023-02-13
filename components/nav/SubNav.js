@@ -3,7 +3,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { Sidebar } from "flowbite-react";
-import handleClickScroll from "../helper/click_handler";
 import {
   MdMovieFilter,
   MdLocalGroceryStore,
@@ -69,18 +68,13 @@ const SubNav = () => {
   };
 
   return (
-    <div >
+    <div>
       <Sidebar className="md:mr-16">
         <Sidebar.Items className="sub-nav md:p-8  bg-slate-200 rounded md:w-fit dark:bg-gray-700">
           <Sidebar.ItemGroup className="md:w-80 ">
             <Sidebar.Collapse label={"Categories"} icon={BiCategory}>
               {state.categories.map((category) => (
-                <Link
-                  key={category.id}
-                  href={`/categories/${category.id}`}
-                  scroll={false}
-                  onClick={handleClickScroll}
-                >
+                <Link key={category.id} href={`/categories/${category.id}`}>
                   <Sidebar.Item
                     icon={CateIcons[category.name]}
                     className={
@@ -95,12 +89,7 @@ const SubNav = () => {
             </Sidebar.Collapse>
             <Sidebar.Collapse icon={HiBuildingStorefront} label="Vendors">
               {state.vendors.map((vendor) => (
-                <Link
-                  key={vendor.id}
-                  href={`${vendor.relative_link}`}
-                  scroll={false}
-                  onClick={handleClickScroll}
-                >
+                <Link key={vendor.id} href={`${vendor.relative_link}`}>
                   <Sidebar.Item
                     icon={CateIcons[vendor.category]}
                     className={
@@ -115,12 +104,7 @@ const SubNav = () => {
             </Sidebar.Collapse>
             <Sidebar.Collapse label="Banks" icon={BsBank2}>
               {state.banks.map((bank) => (
-                <Link
-                  key={bank.id}
-                  href={`/bank/${bank.id}`}
-                  scroll={false}
-                  onClick={handleClickScroll}
-                >
+                <Link key={bank.id} href={`/bank/${bank.id}`}>
                   <Sidebar.Item
                     className={
                       router.asPath === `/bank/${bank.id}` &&
@@ -134,12 +118,7 @@ const SubNav = () => {
             </Sidebar.Collapse>
             <Sidebar.Collapse label="Cards" icon={BsCreditCard2Back}>
               {state.cards.map((card) => (
-                <Link
-                  key={card.id}
-                  href={`/cards/${card.id}`}
-                  scroll={false}
-                  onClick={handleClickScroll}
-                >
+                <Link key={card.id} href={`/cards/${card.id}`}>
                   <Sidebar.Item
                     className={
                       router.asPath === `/cards/${card.id}` &&

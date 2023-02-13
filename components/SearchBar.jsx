@@ -1,7 +1,6 @@
 import { Dropdown } from "flowbite-react";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import handleClickScroll from "./helper/click_handler";
 
 const SearchBar = () => {
   const router = useRouter();
@@ -10,8 +9,7 @@ const SearchBar = () => {
 
   const handleSearchSubmit = async (e) => {
     e.preventDefault();
-    handleClickScroll();
-    router.push(`/search/${filter}?keyword=${searchKeyword}`, null, { scroll: false });
+    router.push(`/search/${filter}?keyword=${searchKeyword}`);
   };
 
   return (
