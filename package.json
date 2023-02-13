@@ -15,6 +15,7 @@
     "flowbite": "^1.6.3",
     "flowbite-react": "^0.3.8",
     "next": "13.1.6",
+    "next-auth": "^4.19.2",
     "node-postgres": "^0.6.2",
     "pg": "^8.9.0",
     "react": "18.2.0",
