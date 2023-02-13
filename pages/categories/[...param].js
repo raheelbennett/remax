@@ -10,7 +10,7 @@ const Category = ({ categories }) => {
 
   return (
     <section>
-      <h2 className="text-2xl font-bold m-8">{categories[0]["category"]}</h2>
+      <h2 className="text-2xl font-bold m-8 mt-10 dark:text-gray-300">{categories[0]["category"]}</h2>
       <div className="card-list grid grid-cols-1 gap-10 m-10">
      <CardList cards={categories} string="grid grid-cols-2" />
       </div>

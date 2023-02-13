@@ -8,7 +8,7 @@ import background from "../../public/assets/img/background.png";
 const Layout = ({ children }) => {
   const router = useRouter();
   return (
-    <div className="dark:bg-gray-700"> {/* this is main section beside the nav  */}
+    <div className="dark:bg-gray-800"> {/* this is main section beside the nav  */}
       <Header />
       {router.pathname === "/" ? (
         <Image

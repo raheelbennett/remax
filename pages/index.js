@@ -7,7 +7,7 @@ import handleClickScroll from "../components/helper/click_handler";
 export default function home({ featured_cards, featured_vendors }) {
   return (
     <main className="">
-      <section className="border-b-8">
+      <section className="border-b-8 dark:border-gray-500">
         <h2 className="text-center md:text-3xl md:font-semibold dark:text-gray-300">
           DISCOVER CASHBACK REWARDS WITH YOUR CREDIT CARDS
         </h2>
@@ -29,7 +29,7 @@ export default function home({ featured_cards, featured_vendors }) {
             <p className="text-base font-medium text-right italic dark:text-remax">View All Cards</p>
           </Link>
       </section>
-      <section className="border-b-8">
+      <section className="border-b-8 dark:border-gray-500">
         <h2 className="mt-20 text-center italic md:text-2xl dark:text-gray-300">
           ENJOY MOVIES, TRAVEL, SHOPPING, DINING, GROCERIES, AND MORE
         </h2>
