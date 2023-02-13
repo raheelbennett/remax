@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import SearchBar from "../SearchBar";
+import Toggle from "../Toggle";
 
 const Header = () => {
   return (
@@ -12,6 +13,7 @@ const Header = () => {
             <Image alt="logo" src="/assets/img/logo.png" width={200} height={200} priority />
           </Link>
         </h1>
+        <Toggle/>
         <SearchBar />
       </header>
     </div>
