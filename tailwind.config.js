@@ -9,7 +9,11 @@ module.exports = {
     "./node_modules/flowbite-react/**/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        'remax': '#58bd17'
+      }
+    },
   },
   plugins: [require("flowbite/plugin")],
 };
