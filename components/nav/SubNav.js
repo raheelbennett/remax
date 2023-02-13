@@ -84,7 +84,7 @@ const SubNav = () => {
         data-drawer-toggle="sidebar-multi-level-sidebar"
         aria-controls="sidebar-multi-level-sidebar"
         type="button"
-        className="fixed top-0 left-0 inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        className=" z-40 fixed top-20 left-0 inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
       >
         <span className="sr-only">Open sidebar</span>
         <svg
@@ -101,7 +101,7 @@ const SubNav = () => {
           ></path>
         </svg>
       </button>
-      <Sidebar className={`${menu === "hide" && "hidden"} absolute z-50 md:contents`}>
+      <Sidebar className={`${menu === "hide" && "hidden"} absolute top-36 z-20 md:contents`}>
         <Sidebar.Items className="sub-nav p-8 bg-slate-200 rounded md:w-fit dark:bg-gray-700 md:mr-20 ">
           <Sidebar.ItemGroup className="w-80 ">
             <Sidebar.Collapse label={"Categories"} icon={BiCategory}>

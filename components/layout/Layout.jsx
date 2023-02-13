@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
           src={background}
           quality={100}
           // width={1200}
-          className="-mb-20"
+          className="-mb-20 pt-36 md:pt-0"
           priority
         />
       ) : null}
