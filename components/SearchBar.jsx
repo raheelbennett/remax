@@ -13,11 +13,10 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="flex my-15 px-2 rounded">
+    <div className="flex my-15 px-2">
       <Dropdown label={filter} className="">
         <Dropdown.Item onClick={() => setFilter("All")}>All</Dropdown.Item>
         <Dropdown.Item onClick={() => setFilter("Cards")}>Cards</Dropdown.Item>
-        <Dropdown.Item onClick={() => setFilter("Categories")}>Categories</Dropdown.Item>
         <Dropdown.Item onClick={() => setFilter("Vendors")}>Vendors</Dropdown.Item>
         <Dropdown.Item onClick={() => setFilter("Banks")}>Banks</Dropdown.Item>
       </Dropdown>
@@ -25,7 +24,7 @@ const SearchBar = () => {
         <input
           type="text"
           placeholder="Search"
-          className="p-2 ml-2 bg-slate-200 text-slate-800 text-center rounded-lg"
+          className="p-2 bg-slate-200 text-slate-800 text-center rounded-lg"
           onChange={(e) => setSearchKeyword(e.target.value)}
         />
       </form>

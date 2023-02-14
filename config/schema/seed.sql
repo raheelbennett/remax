@@ -56,10 +56,6 @@ VALUES
 
 
 
-INSERT INTO listings(reward_rate, vendor , card_id)
-VALUES
-( 4,11,9),
-( 5 ,18,13);
 
 
 INSERT INTO rewards (reward_rate, card_id,category_id)
@@ -145,3 +141,9 @@ INSERT INTO listings(reward_rate, vendor , card_id)
 VALUES
 (2.5,2,5),
 (1.5,4,2);
+
+
+INSERT INTO listings(reward_rate, vendor , card_id)
+VALUES
+( 4,11,9),
+( 5 ,18,13);
