@@ -37,7 +37,7 @@ export default function SearchResults({ banks, cards, vendors }) {
           ) : (
             <h3 className="m-8">Found {vendors.length} results</h3>
           )}
-          <div className="card-list grid grid-cols-4 gap-4 mx-20">
+          <div className="card-list grid grid-cols-4 gap-4 mx-20 ">
             <VendorList vendors={vendors} />
           </div>
         </section>
