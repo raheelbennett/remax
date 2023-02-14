@@ -75,7 +75,7 @@ const SubNav = () => {
   };
 
   return (
-    <div className="bg-blend-darken">
+    <div className="">
       <button
         onClick={() => {
           menu === "hide" ? setMenu("show") : setMenu("hide");
@@ -101,9 +101,11 @@ const SubNav = () => {
         </svg>
       </button>
       <Sidebar
-        className={`${menu === "hide" && "hidden"} fixed top-36 bg-blend-overlay z-20 md:contents`}
+        className={`${
+          menu === "hide" && "hidden"
+        } fixed top-36 bg-blend-overlay overflow-scroll	h-full z-20 md:contents`}
       >
-        <Sidebar.Items className="sub-nav p-8 bg-slate-200 rounded md:w-fit dark:bg-gray-700 md:mr-20 ">
+        <Sidebar.Items className="sub-nav p-8 bg-slate-200 rounded md:w-fit dark:bg-gray-700  md:mr-20 ">
           <Sidebar.ItemGroup className="w-80 ">
             <Sidebar.Collapse label={"Categories"} icon={BiCategory}>
               {state.categories.map((category) => (
