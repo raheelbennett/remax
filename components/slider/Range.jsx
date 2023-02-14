@@ -30,6 +30,7 @@ const formattedSavings =  `$${savings.toFixed(2)}`;
         />
       </Col>
       <Col md={9}>
+      <br/>
         <InputNumber
           prefix="$"
           min={0}

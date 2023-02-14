@@ -24,8 +24,8 @@ const Bank = ({ cards, cashback }) => {
   }
   return (
     cards.length > 0 && (
-      <section className="w-1/2">
-        <h2 className="text-2xl font-bold m-8 dark:text-gray-300">{cards[0]["bank"]}</h2>
+      <section className="md:w-1/2">
+        <h2 className="text-2xl font-bold m-8 mt-10 dark:text-gray-300">{cards[0]["bank"]}</h2>
         <div className="card-list grid grid-cols-1 gap-10 m-10">
           {cards.map((card) => (
             <div className="p-6 rounded-lg shadow-md dark:shadow-blue-400/40 dark:bg-gray-600 dark:hover:bg-gray-400" key={card.id}>
