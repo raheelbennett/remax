@@ -124,9 +124,9 @@ VALUES
 ('Disney Plus', 8, true, 'disney-plus.jpeg', '/vendor/disney-plus'),
 ('Canadian Tire', 6, false,'ct.png','/vendor/canadian-tire' ),
 ('No Frills', 1, false,'no-frills.jpeg', '/vendor/no-frills' ),
-('Burger king', 1, true, 'burger-king.png' ,'/vendor/burger-king'),
+('Burger king', 1, false, 'burger-king.png' ,'/vendor/burger-king'),
 ('Starbucks', 8, false, 'starbucks.jpeg' ,'/vendor/starbucks'),
-('Petro-Canada', 9, true, 'petro-canada.png' ,'/vendor/petro'),
+('Petro-Canada', 9, false, 'petro-canada.png' ,'/vendor/petro'),
 ('Shell', 9, false, 'shell.png' ,'/vendor/shell'),
 ('Esso', 9, false, 'esso.png' ,'/vendor/esso'),
 ('Walmart', 9, false, 'walmart.jpeg' ,'/vendor/walmart');

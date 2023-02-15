@@ -19,12 +19,14 @@ export default function home({ featured_cards, featured_vendors }) {
           ))}
         </div>
         <Link href="/cards/all">
-          <p className="text-base font-medium text-right italic dark:text-remax">View All Cards</p>
+          <p className="mb-8 text-base font-medium text-right italic text-blue-700">
+            View All Cards
+          </p>
         </Link>
       </section>
       <section className="border-b-8 dark:border-gray-500">
-        <h2 className="mt-20 text-center italic md:text-2xl dark:text-gray-300">
-          ENJOY MOVIES, TRAVEL, SHOPPING, DINING, GROCERIES, AND MORE
+        <h2 className="my-12 text-center italic md:text-2xl dark:text-gray-300">
+          ENJOY MOVIES, TRAVEL, SHOPPING, DINING, GROCERIES, AND MORE ...
         </h2>
         <div className="vendor-list grid grid-cols-2 gap-8 place-items-center md:grid-cols-4">
           {featured_vendors.map((vendor) => (
@@ -34,7 +36,7 @@ export default function home({ featured_cards, featured_vendors }) {
           ))}
         </div>
         <Link href="/vendors">
-          <p className="text-base font-medium text-right italic dark:text-remax ">
+          <p className="mb-8 text-base font-medium text-right italic text-blue-700 ">
             View All Vendors
           </p>
         </Link>

@@ -14,12 +14,14 @@ const SearchBar = () => {
 
   return (
     <div className="flex my-15 px-2">
-      <Dropdown label={filter} className="">
+      {/* <div className="bg-blue-700 rounded-l-lg hover:bg-blue-800 rounded-r-none"> */}
+      <Dropdown label={filter} className="rounded-r-none">
         <Dropdown.Item onClick={() => setFilter("All")}>All</Dropdown.Item>
         <Dropdown.Item onClick={() => setFilter("Cards")}>Cards</Dropdown.Item>
         <Dropdown.Item onClick={() => setFilter("Vendors")}>Vendors</Dropdown.Item>
         <Dropdown.Item onClick={() => setFilter("Banks")}>Banks</Dropdown.Item>
       </Dropdown>
+      {/* </div> */}
       <form onSubmit={handleSearchSubmit}>
         <input
           type="text"
