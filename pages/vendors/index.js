@@ -5,7 +5,9 @@ import React from "react";
 const Vendors = ({ vendors }) => {
   return (
     <section>
-      <h2 className="text-center text-3xl  my-10">ALL VENDORS</h2>
+      <h2 className="text-center text-3xl font-semibold m-10 mt-0 dark:text-gray-300">
+        ALL AVAILABLE VENDORS
+      </h2>
       <div className="card-list grid gap-2 my-10 mx-20 grid-cols-4">
         <VendorAll vendors={vendors} />
       </div>
