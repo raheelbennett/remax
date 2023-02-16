@@ -9,24 +9,31 @@ const SearchBar = () => {
 
   const handleSearchSubmit = async (e) => {
     e.preventDefault();
-    router.push(`/search/${filter}?keyword=${searchKeyword}`);
+    await router.push(`/search/${filter}?keyword=${searchKeyword}`);
+    setSearchKeyword("");
   };
 
   return (
-    <div className="flex my-15 px-2">
-      {/* <div className="bg-blue-700 rounded-l-lg hover:bg-blue-800 rounded-r-none"> */}
-      <Dropdown label={filter} className="rounded-r-none">
-        <Dropdown.Item onClick={() => setFilter("All")}>All</Dropdown.Item>
+    <div className="flex my-15">
+      <Dropdown
+        label={filter}
+        style={{
+          borderTopRightRadius: 0,
+          borderBottomRightRadius: 0,
+        }}
+      >
+        <Dropdown.Item onClick={() => setFilter("Banks")}>Banks</Dropdown.Item>
         <Dropdown.Item onClick={() => setFilter("Cards")}>Cards</Dropdown.Item>
         <Dropdown.Item onClick={() => setFilter("Vendors")}>Vendors</Dropdown.Item>
-        <Dropdown.Item onClick={() => setFilter("Banks")}>Banks</Dropdown.Item>
+        <Dropdown.Divider />
+        <Dropdown.Item onClick={() => setFilter("All")}>All</Dropdown.Item>
       </Dropdown>
-      {/* </div> */}
       <form onSubmit={handleSearchSubmit}>
         <input
           type="text"
           placeholder="Search"
-          className="p-2 bg-slate-200 text-slate-800 text-center rounded-lg"
+          value={searchKeyword}
+          className="p-2 bg-slate-200 text-slate-800 text-center rounded-lg rounded-l-none"
           onChange={(e) => setSearchKeyword(e.target.value)}
         />
       </form>

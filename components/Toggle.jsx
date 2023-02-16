@@ -11,6 +11,7 @@ export default function Toggle() {
   }
   return (
     <button
+      className="mr-5 ml-auto md:mx-auto"
       onClick={() => {
         if (theme === "light") {
           return setTheme("dark");
@@ -19,7 +20,7 @@ export default function Toggle() {
       }}
       type="button"
     >
-        {theme === "light" ? "🌙" : "☀️"}
+      {theme === "light" ? "🌙" : "☀️"}
     </button>
   );
 }
