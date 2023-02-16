@@ -9,11 +9,11 @@ const Category = ({ categories }) => {
   const { param } = router.query;
 
   return (
-    <section className="md:w-1/2">
-      <h2 className="text-2xl font-bold w-max mx-auto mt-2 dark:text-gray-300">
+    <section className="">
+      <h2 className="text-2xl font-bold w-max mx-auto p-2 md:mt-0 dark:text-gray-300">
         {categories[0]["category"]}
       </h2>
-      <div className="card-list grid grid-cols-1 gap-10 m-10">
+      <div className="card-list grid grid-cols-1 gap-10 m-10 mx-auto p-6">
         <CardList cards={categories} string="grid grid-cols-2" />
       </div>
     </section>

@@ -11,6 +11,7 @@ const SearchBar = () => {
     e.preventDefault();
     await router.push(`/search/${filter}?keyword=${searchKeyword}`);
     setSearchKeyword("");
+    setFilter("All");
   };
 
   return (
@@ -33,7 +34,7 @@ const SearchBar = () => {
           type="text"
           placeholder="Search"
           value={searchKeyword}
-          className="p-2 bg-slate-200 text-slate-800 text-center rounded-lg rounded-l-none"
+          className="p-2 bg-slate-200 text-slate-800 text-center rounded-lg rounded-l-none mr-2"
           onChange={(e) => setSearchKeyword(e.target.value)}
         />
       </form>

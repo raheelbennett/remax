@@ -5,7 +5,7 @@ import { getFeaturedCards, getFeaturedVendors } from "@/config/queries/helper";
 
 export default function home({ featured_cards, featured_vendors }) {
   return (
-    <main className="">
+    <main className="px-4">
       <section className="border-b-8 dark:border-gray-500">
         <h2 className="text-center md:text-3xl md:font-semibold dark:text-gray-300">
           DISCOVER CASHBACK REWARDS WITH YOUR CREDIT CARDS

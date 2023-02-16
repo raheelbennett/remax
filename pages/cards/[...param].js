@@ -18,7 +18,7 @@ const Cards = ({ cards, vendors, all }) => {
         <h2 className="text-center text-3xl font-semibold m-10 mt-0 dark:text-gray-300">
           ALL AVAILABLE CREDIT CARDS
         </h2>
-        <div className="card-list grid grid-cols-2 gap-8 my-10 md:grid-cols-4">
+        <div className="card-list grid gap-8 my-10 mx-10 md:grid-cols-4">
           <CardList cards={all} />
         </div>
       </section>
@@ -26,9 +26,9 @@ const Cards = ({ cards, vendors, all }) => {
   }
   return (
     <section>
-      <div className="card-list grid grid-cols-1 gap-10 m-10 mt-0">
-        <div className="p-8 rounded-lg shadow-lg dark:shadow-blue-400/40 dark:bg-gray-400 ">
-          <h2 className="p-2 lg:px-3 mx-2 text-xl font-bold text-center mb-4 text-gray-700 dark:text-gray-800">
+      <div className="card-list grid grid-cols-1 gap-10 md:ml-36 mt-0 mx-auto ">
+        <div className="p-6 rounded-lg shadow-lg dark:shadow-blue-400/40 dark:bg-gray-400 ">
+          <h2 className="p-0 lg:px-3 mx-2 text-xl font-bold text-center mb-4 text-gray-700 dark:text-gray-800">
             <Link href={card.link}>
               <BsInfoCircle className="text-gray-700 hover:text-orange-400 " size="1.25em" />
             </Link>

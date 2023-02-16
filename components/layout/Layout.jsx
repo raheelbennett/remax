@@ -9,16 +9,15 @@ const Layout = ({ children }) => {
   const router = useRouter();
   return (
     <div className="dark:bg-gray-800">
-      {" "}
-      {/* this is main section beside the nav  */}
       <Header />
       {router.pathname === "/" ? (
         <Image
           alt="background"
           src={background}
           quality={100}
-          // width={1200}
-          className="-mb-20 pt-36 md:pt-0"
+          width={785}
+          height="auto"
+          className="-mb-20 mx-auto pt-36 md:pt-10"
           priority
         />
       ) : null}
