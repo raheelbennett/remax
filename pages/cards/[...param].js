@@ -25,8 +25,8 @@ const Cards = ({ cards, vendors, all }) => {
     );
   }
   return (
-    <section>
-      <div className="card-list grid grid-cols-1 gap-10 md:ml-36 mt-0 mx-auto ">
+    <section className="mx-auto">
+      <div className="card-list grid grid-cols-1 gap-10 mt-0 mx-auto ">
         <div className="p-6 rounded-lg shadow-lg dark:shadow-blue-400/40 dark:bg-gray-400 ">
           <h2 className="p-0 lg:px-3 mx-2 text-xl font-bold text-center mb-4 text-gray-700 dark:text-gray-800">
             <Link href={card.link}>
