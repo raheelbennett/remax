@@ -1,8 +1,8 @@
-### Disclaimer: This app was created as part of a final project for learning and educational purposes, under guidance of LightHouse Labs. It is not ready or indended for production.
+#### Disclaimer: This app was created as part of a final project for learning and educational purposes, under guidance of LightHouse Labs. It is not ready or indended for production.
 
 ## Project title
 
-     ### REMAX - "Maximize your rewards"
+### REMAX - "Maximize your rewards"
 
 ## Description
 
