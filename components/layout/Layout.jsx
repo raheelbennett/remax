@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
           priority
         />
       ) : null}
-      <div id="sub-container" className="flex pt-36 md:pt-20">
+      <div id="sub-container" className="flex pt-36 container mx-auto md:pt-20">
         <SubNav />
         {children}
       </div>

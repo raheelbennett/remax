@@ -105,7 +105,7 @@ const SubNav = () => {
           menu === "hide" && "hidden"
         } fixed top-36 bg-blend-overlay overflow-scroll	h-full z-20 md:contents`}
       >
-        <Sidebar.Items className="sub-nav p-4 bg-slate-200 rounded md:w-fit dark:bg-gray-700">
+        <Sidebar.Items className="sub-nav p-4 bg-slate-200 rounded-lg py-5 md:w-fit dark:bg-gray-700 md:mr-0 ">
           <Sidebar.ItemGroup className="w-80 ">
             <Sidebar.Collapse label={"Categories"} icon={BiCategory}>
               {state.categories.map((category) => (
