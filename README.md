@@ -4,6 +4,8 @@
 
 ### REMAX - "Maximize your rewards"
 
+### REMAX - "Maximize your rewards"
+
 ## Description
 
 There are many credit cards out there these days and it can get overwhelming. REMAX helps users decide which credit cards to get the most cashback value. Our app allows clients to maximize cashback from their credit card purchases, by showcasing popular credit cards and their rewards in a clear and concise manner. The app features a clean interface with dark mode option and was built with responsive design for ease of use on mobile devices. The home page showcases the featured cards and vendors. A navigation bar is displayed at all times to allow users to navigate the entire app conveniently, in addition to a search bar. Data is persisted with the help of a database. Some features are displayed but not functional, such as the Footer section, Register, Login and About page.
