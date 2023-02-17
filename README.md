@@ -89,4 +89,20 @@ Future development of the apps aim to:
 
 ## App Interface
 
-!["Screenshot of Home1"](https://github.com/raheelbennett/tinyapp/blob/master/docs/urls_page_while_logged_in.PNG?raw=true)
+## !["Screenshot of Home1"](https://github.com/aingarant/remax/blob/main/planning/screenshots/home.PNG?raw=true)
+
+## !["Screenshot of Home2"](https://github.com/aingarant/remax/blob/main/planning/screenshots/home2.PNG?raw=true)
+
+## !["Screenshot of Categories"](https://github.com/aingarant/remax/blob/main/planning/screenshots/categoies.PNG?raw=true)
+
+## !["Screenshot of Vendors"](https://github.com/aingarant/remax/blob/main/planning/screenshots/vendors.PNG?raw=true)
+
+## !["Screenshot of Banks"](https://github.com/aingarant/remax/blob/main/planning/screenshots/banks.PNG?raw=true)
+
+## !["Screenshot of Cards"](https://github.com/aingarant/remax/blob/main/planning/screenshots/cards.PNG?raw=true)
+
+## !["Screenshot of Search"](https://github.com/aingarant/remax/blob/main/planning/screenshots/search.PNG?raw=true)
+
+## !["Screenshot of Dark"](https://github.com/aingarant/remax/blob/main/planning/screenshots/dark.PNG?raw=true)
+
+## !["Screenshot of Mobile"](https://github.com/aingarant/remax/blob/main/planning/screenshots/mobile.PNG?raw=true)
